@@ -1,5 +1,6 @@
 @import url(../header/header.min.css);
 @import url(../footer/footer.min.css);
+@import url(https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css);
 body {
   color: #483505;
   font-size: 16px;
