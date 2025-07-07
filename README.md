@@ -19,14 +19,48 @@ snack/
 ├── about.html # スナックかくれんぼに関する詳細ページ
 ├── street.html # 商店街に関するページ
 ├── css/
-│ ├── style.css
-│ ├── style.css.map
-│ ├── style.min.css
-│ ├── style.min.css.map
-│ └── style.scss
+│ ├── common
+│ │   ├── .css
+│ │   ├── .css.map
+│ │   ├── .min.css
+│ │   ├── .min.css.map
+│ │   └── .scss
+│ ├── header
+│ │   ├── .css
+│ │   ├── .css.map
+│ │   ├── .min.css
+│ │   ├── .min.css.map
+│ │   └── .scss
+│ ├── footer
+│ │   ├── .css
+│ │   ├── .css.map
+│ │   ├── .min.css
+│ │   ├── .min.css.map
+│ │   └── .scss
+│ ├── index
+│ │   ├── .css
+│ │   ├── .css.map
+│ │   ├── .min.css
+│ │   ├── .min.css.map
+│ │   └── .scss
+│ ├── about
+│ │   ├── .css
+│ │   ├── .css.map
+│ │   ├── .min.css
+│ │   ├── .min.css.map
+│ │   └── .scss
+│ └── street
+│ │   ├── .css
+│ │   ├── .css.map
+│ │   ├── .min.css
+│ │   ├── .min.css.map
+│ │   └── .scss
+├── js/
+│ └── index.js
 ├── img/
 │ ├── icon/ # アイコン系データ
-│ └── photo/ # 写真・画像系データ
+│ ├── illust/ # イラスト系データ
+│ └── photo/ # 写真データ
 ```
 
 ## 主要ページ
