@@ -1,4 +1,90 @@
 @import url(../header/header.min.css);
 @import url(../footer/footer.min.css);
+@import url(https://cdn.jsdelivr.net/npm/the-new-css-reset/css/reset.min.css);
 
 //*commonはここから書いていく
+//mixin~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+@mixin mix-flex($a: center, $j: space-between) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin mix-inner($w: 90%, $mw: 1200px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+$breakpoints: (
+    "tablet": "screen and (min-width: 640px)",
+    "desktop": "screen and (min-width: 800px)",
+    "full": "screen and (min-width: 1200px)",
+    ) !default;
+
+@mixin mix-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+body {
+    color: #483505;
+    font-size: 16px;
+    letter-spacing: 0;
+}
+
+img {
+    vertical-align: bottom;
+    max-width: 100%;
+    height: auto;
+}
+
+//各セクション内に初めて出てくるタイトル
+h2 {
+    font-size: 30px;
+}
+
+//仮
+.btn {
+    display: block;
+
+    &:hover {
+        transform: scale(1.1
+        );
+}
+}
+
+.map {
+    background: #9ACBDA;
+    //sticky分の領域を確保
+    min-height: 200vh;
+
+    &__container {
+        //コンテナ内で位置固定
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: auto;
+        height: auto;
+
+        //画像がtransformで動くことを前もってブラウザに通知
+        will-change: transform;
+        //残りはjsで動かします。
+    }
+
+    &__inner {
+        @include mix-inner();
+    }
+
+    & {}
+}
