@@ -6,31 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スナックかくれんぼトップページ</title>
     <!-- 各CSS読み込み -->
-    <link rel="stylesheet" href="CSS/common/common.min.css">
-    <link rel="stylesheet" href="CSS/index/index.min.css">
+    <link rel="stylesheet" href="./CSS/common/common.min.css">
+    <link rel="stylesheet" href="./CSS/index/index.min.css">
 
 </head>
 
-<body>
+<body id="index">
+
+    <header class="header">
+        <div class="header__inner">
+            <img class="header__logo" src="https://placehold.jp/50x50.png" alt="">
+
+            <button class="header__hamburger hamburger">
+                <!-- メニューの三本線 -->
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+                <span class="hamburger__line"></span>
+            </button>
+        </div>
+    </header>
 
     <main class="main" id="main">
         <section class="firstView">
-            <div class="firstView__decoration decoration">
+
+            <!-- <div class="firstView__decoration decoration">
                 <img src="https://placehold.jp/100x100.png" alt="">
                 <img src="https://placehold.jp/100x100.png" alt="">
                 <img src="https://placehold.jp/100x100.png" alt="">
-            </div>
+            </div> -->
+
             <div class="firstView__inner">
-                <img src="https://placehold.jp/1041x543.png" alt="">
+                <img class="firstView__img" src="https://placehold.jp/1041x543.png" alt="">
             </div>
-            <span class="firstView__event event">
-                イベントです
-            </span>
+            <span class="firstView__event">イベントです</span>
         </section>
 
         <section class="shop">
             <div class="shop__inner">
-                <h2 class="shop__title"></h2>
+                <h2 class="shop__title">「子どもと大人がつながる、まちの小さなよりみち」</h2>
                 <p class="shop__overview">
                     スナックかくれんぼは、子どもたちがふらっと立ち寄り、大人や地域の人とおしゃべりできる駄菓子屋です。 私たちは、子どもの「居場所づくり」にとって、大人との接点が欠かせないと考えています。
                     人と人が顔を合わせて関わることで、まちにあたたかい空気が生まれていく。 ここが、そんなつながりのきっかけになる場所であれたらと思っています。
@@ -40,14 +53,22 @@
 
         <section class="explanation">
             <div class="explanation__inner">
-                <img src="https://placehold.jp/100x100.png" alt="">
-                <img src="https://placehold.jp/100x100.png" alt="">
+                <div class="explanation__question">
+                    <img class="explanation__icon" src="https://placehold.jp/50x50.png" alt="">
+                    <p class="explanation__comment">スナックかくれんぼってどんなところのなの？</p>
+                </div>
+                <div class="explanation__answer">
+                    <img class="explanation__icon" src="https://placehold.jp/50x50.png" alt="">
+                    <p class="explanation__comment">かくれんぼをしながら、移動する駄菓子屋だよ!!
+                        毎週木曜日の夕方に内田橋商店街のどこかに現れるから、探してみてね〜。</p>
+                </div>
             </div>
         </section>
 
         <section class="note">
             <div class="note__inner">
                 <div class="note__list">
+                    <h2 class="note__title">かくれんぼ日記</h2>
                     <dl class="list__item">
                         <dt class="list__day">
                             20/20/20
@@ -75,7 +96,7 @@
                         </dd>
                     </dl>
 
-                    <button><a href="note__btn">もっと覗いてみる</a></button>
+                    <button class="note__btn"><a href="#">もっと覗いてみる</a></button>
                 </div>
             </div>
         </section>
@@ -93,21 +114,58 @@
                 </hgroup>
 
                 <div class="instagram__grid grid">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/420x580.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/350x280.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/350x280.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/197x980.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/791x380.png" alt="">
 
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/100x100.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/313x500.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/313x500.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/313x500.png" alt="">
+                    <img class="grid__item" src="https://placehold.jp/979x244.png" alt="">
                 </div>
+
 
                 <button><a class="instagram__btn btn" href=""></a></button>
             </div>
         </section>
+
+        <section class="map">
+            <!-- 背景ようのコンテナ -->
+            <div class="map__slider">
+            </div>
+            <!--  -->
+            <div class="map__inner">
+                <div class="map__content">
+                    <img class="map__frame" src="https://placehold.jp/150x150.png" alt="">
+                    <div class="map__info">
+                        <dl class="map__list">
+                            <dt class="map__item">お店のなまえ</dt>
+                            <dd class="map__item">スナックかくれんぼ</dd>
+                        </dl>
+
+                        <dl class="map__list">
+                            <dt class="map__item">お店のなまえ</dt>
+                            <dd class="map__item">スナックかくれんぼ</dd>
+                        </dl>
+
+                        <dl class="map__list">
+                            <dt class="map__item">お店のなまえ</dt>
+                            <dd class="map__item">スナックかくれんぼ</dd>
+                        </dl>
+
+                        <dl class="map__list">
+                            <dt class="map__item">お店のなまえ</dt>
+                            <dd class="map__item">スナックかくれんぼ</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="JS/all.js" defer></script>
+        <script src="JS/index.js" defer></script>
     </main>
 
 </body>
