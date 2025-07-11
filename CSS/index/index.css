@@ -1,2 +1,25 @@
+body {
+  background: #F4EFE2;
+}
 
+.firstView {
+  position: relative;
+}
+.firstView__decoration {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.firstView__decoration__event {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.firstView__inner {
+  width: 90%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /*# sourceMappingURL=index.css.map */
