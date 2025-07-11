@@ -1,0 +1,97 @@
+@mixin mix-flex($a: center, $j: space-between) {
+    display: flex;
+    justify-content: $j;
+    align-items: $a;
+}
+
+@mixin mix-inner($w: 90%, $mw: 1200px) {
+    width: $w;
+    max-width: $mw;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+$breakpoints: (
+    "tablet": "screen and (min-width: 640px)",
+    "desktop": "screen and (min-width: 800px)",
+    "full": "screen and (min-width: 1200px)",
+    ) !default;
+
+@mixin mix-query($breakpoint) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+@function f-rem($value) {
+    @return ($value/16)+rem;
+}
+
+//headerスタイル~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.header {
+    position: fixed;
+    margin-top: 25px;
+    display: block;
+    width: 100%;
+    height: auto;
+
+    z-index: 1000;
+
+
+    &__inner {
+        @include mix-inner(
+    );
+    @include mix-flex();
+}
+
+&__logo {
+    display: block;
+}
+
+
+}
+
+.hamburger {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: #fff;
+    border-radius: 6px;
+
+    transition: all .3s ease-out;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+
+    &__line {
+        position: relative;
+        display: block;
+        width: 70%;
+        height: 3px;
+        background: #000;
+        margin: 0 auto;
+        transition: .3s;
+        top: 0;
+
+        &:nth-child(2) {
+            margin: 10px auto;
+        }
+    }
+}
+
+.firstLineOpen {
+    transform: rotate(45deg);
+    top: 15px;
+}
+
+.secondLineOpen {
+    opacity: 0;
+}
+
+.thirdLineOpen {
+    transform: rotate(-45deg);
+    top: -20%;
+}

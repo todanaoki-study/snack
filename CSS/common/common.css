@@ -14,7 +14,7 @@ img {
 }
 
 h2 {
-  font-size: 30px;
+  font-size: 20px;
 }
 
 .btn {
@@ -28,19 +28,41 @@ h2 {
   background: #9ACBDA;
   min-height: 200vh;
 }
-.map__container {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
-  left: 0;
-  width: auto;
-  height: auto;
-  will-change: transform;
-}
 .map__inner {
   width: 90%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+}
+.map__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.map__frame {
+  display: block;
+  width: 45%;
+}
+.map__info {
+  width: 45%;
+}
+.map__list {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #222;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.map__item {
+  font-size: 12px;
+}
+.map__item:nth-child(odd) {
+  font-weight: bold;
+}
+.map__item:nth-child(even) {
+  margin-left: 5px;
 }
 /*# sourceMappingURL=common.css.map */
