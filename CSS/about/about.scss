@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import "../common/common.min.css";
+@import "../common/common";
 
 // common.scss
 @mixin mix-inner($w: 90%, $mw: 1200px) {
@@ -26,19 +26,28 @@
 .content__inner {
   @include content__inner;
   display: grid;
-  grid-template-rows: repeat(3, auto); // 1列3行
+  grid-template-rows: repeat(3, auto);
   position: relative;
   gap: 150px;
+
+  @include mix-query("tablet") {
+    gap: 234px;
+  }
 }
 
 .content__item {
   max-width: 250px;
   width: (250 / 335) * 100%;
-  grid-column: 1; // 一旦すべて左に配置
-  justify-self: start; // 左寄せ
+  grid-column: 1;
+  justify-self: start;
 
   &:nth-child(even) {
-    justify-self: end; // 偶数番目は右寄せに
+    justify-self: end;
+  }
+
+  @include mix-query("tablet") {
+    max-width: 1152px;
+    width: (1152 / 1920) * 100%;
   }
 }
 
@@ -49,6 +58,10 @@
 /* staff */
 .staff {
   padding-top: 120px;
+
+  @include mix-query("tablet") {
+    padding-top: 180px;
+  }
 }
 
 @mixin staff__inner {
@@ -59,8 +72,18 @@
   @include staff__inner;
 }
 
+.staff__memberList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
 .staff__text {
   margin: 8px 0 0 11.38px;
+
+  @include mix-query("tablet") {
+    margin-left: 0;
+  }
 }
 
 .staff__name {
@@ -83,9 +106,21 @@
   gap: 86px;
 }
 
+.staff__help {
+  @include mix-query("tablet") {
+    padding-top: 180px;
+    gap: 230px;
+  }
+}
+
 .staff__help .staff__item {
   max-width: 100px;
   width: (88 / 335) * 100%;
+
+  @include mix-query("full") {
+    max-width: 258px;
+    width: (258 / 1920) * 100%;
+  }
 }
 
 .staff__help .staff__name {
@@ -96,6 +131,10 @@
 /* review */
 .review {
   padding-top: 120px;
+
+  @include mix-query("tablet") {
+    padding-top: 180px;
+  }
 }
 
 @mixin review__inner {
@@ -138,6 +177,10 @@
   max-width: 335px;
   width: 100%;
   padding: 10px 25px;
+
+  @include mix-query("tablet") {
+    margin-right: 0;
+  }
 }
 
 /* snack */
@@ -157,7 +200,6 @@
   overflow-x: auto;
   white-space: nowrap;
   gap: 29px;
-  padding: 1rem;
   scroll-behavior: smooth;
   margin-top: 60px;
   padding-bottom: 120px;
