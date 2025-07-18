@@ -39,6 +39,9 @@ $breakpoints: (
 
 /*nav*/
 .nav {
+  &__logo img {
+    width: 200px;
+  }
   &__list {
     display: flex;
     flex-wrap: wrap;
@@ -50,19 +53,39 @@ $breakpoints: (
     }
   }
 
-  &__item {
+  &__item a {
     padding: (10em/12);
     background-color: $color-btn;
     border-radius: 10px;
-    transition: 0.3s ease-out;
 
     @include m-query(desktop) {
-      margin-top: (20em/14);
+      margin-top: (40em/14);
     }
   }
 
-  &__item:hover {
-    transform: scale(1.1);
+  .nav__item a {
+    display: inline-block;
+    transition: transform 0.2s ease;
+  }
+
+  .nav__item a:hover {
+    animation: bounce 0.6s ease infinite;
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    30% {
+      transform: translateY(-10px);
+    }
+    50% {
+      transform: translateY(0);
+    }
+    70% {
+      transform: translateY(-6px);
+    }
   }
 }
 
