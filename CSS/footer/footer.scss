@@ -5,135 +5,140 @@ $color-text: #483505;
 $color-bg: #d8bb86;
 $color-btn: #ffffff;
 $breakpoints: (
-    "tablet": "(640px <= width)",
-    "desktop": "(800px <= width)",
-    "full": "(1200px <= width)",
-    ) !default;
+  "tablet": "(640px <= width)",
+  "desktop": "(800px <= width)",
+  "full": "(1200px <= width)"
+) !default;
 
 @mixin m-query($breakpoint) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-        @content;
-    }
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
 }
 
 /*mixin*/
 @mixin m-inner($w: 90%, $mw: 1200px) {
-    width: $w;
-    max-width: $mw;
-    margin-left: auto;
-    margin-right: auto;
+  width: $w;
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 @mixin m-flex($a: center, $j: space-between) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: $j;
-    align-items: $a;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: $j;
+  align-items: $a;
 }
 
 @function f-rem($value) {
-    @return ($value/16)+rem;
+  @return ($value/16) + rem;
 }
-
 
 /*----------module----------*/
 
 /*nav*/
 .nav {
-    &__list {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: center;
-
-        @include m-query(desktop) {
-            flex-direction: column;
-        }
-    }
-
-    &__item {
-        padding: (10em/12
-        );
-    background-color: $color-btn;
-    border-radius: 10px;
-    transition: .3s ease-out;
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
 
     @include m-query(desktop) {
-        margin-top: (20em/14);
+      flex-direction: column;
     }
-}
+  }
 
-&__item:hover {
+  &__item {
+    padding: (10em/12);
+    background-color: $color-btn;
+    border-radius: 10px;
+    transition: 0.3s ease-out;
+
+    @include m-query(desktop) {
+      margin-top: (20em/14);
+    }
+  }
+
+  &__item:hover {
     transform: scale(1.1);
-}
+  }
 }
 
 /*gnav*/
 .gnav {
-    margin-top: (20em/12);
+  margin-top: (20em/12);
 
-    &__item {
-        margin-top: (10em/12);
-        transition: .3s ease-out;
-    }
+  &__current {
+    display: inline-block;
+    transition: 0.3s ease-out;
 
-    &__item:hover {
-        transform: scale(1.1);
+    &:hover {
+      transform: scale(1.2);
     }
+  }
+
+  &__item {
+    margin-top: (10em/12);
+    transition: 0.3s ease-out;
+  }
+
+  &__item:hover {
+    transform: scale(1.1);
+  }
 }
 
 .gnav:first-child {
-    @include m-query(desktop) {
-        margin-right: (100em/14);
-    }
+  @include m-query(desktop) {
+    margin-right: (100em/14);
+  }
 }
-
 
 /*----------street.html----------*/
 
 /*footer*/
 .footer {
-    padding: (40em/12) 0;
-    color: $color-text;
-    background-color: $color-bg;
-    font-family: "Zen Maru Gothic",
-        sans-serif;
-    font-size: f-rem(12);
-    font-weight: 400;
-    line-height: (19.2/12);
-    letter-spacing: (50/1000)rem;
+  padding: (40em/12) 0;
+  color: $color-text;
+  background-color: $color-bg;
+  font-family: "Zen Maru Gothic", sans-serif;
+  font-size: f-rem(12);
+  font-weight: 400;
+  line-height: (19.2/12);
+  letter-spacing: (50/1000) rem;
+
+  @include m-query(desktop) {
+    padding: (90em/14) 0 (60em/14);
+    font-size: f-rem(14);
+    line-height: (22.4/14);
+  }
+
+  &__inner {
+    @include m-inner();
+  }
+
+  &__menu {
+    margin-top: (30em/12);
 
     @include m-query(desktop) {
-        padding: (90em/14) 0 (60em/14);
-        font-size: f-rem(14);
-        line-height: (22.4/14);
+      margin: 0 (40em/14);
     }
+  }
 
-    &__inner {
-        @include m-inner();
+  &__nav {
+    @include m-query(desktop) {
+      @include m-flex(flex-start);
     }
+  }
 
-    &__menu {
-        margin-top: (30em/12);
+  &__gnav {
+    @include m-flex();
+  }
 
-        @include m-query(desktop) {
-            margin: 0 (40em/14);
-        }
-    }
-
-    &__nav {
-        @include m-query(desktop) {
-            @include m-flex(flex-start);
-        }
-    }
-
-    &__gnav {
-        @include m-flex();
-    }
-
-    &__copy {
-        margin-top: (100em/12);
-        display: block;
-        text-align: center;
-    }
+  &__copy {
+    margin-top: (100em/12);
+    display: block;
+    text-align: center;
+  }
 }

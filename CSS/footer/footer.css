@@ -33,6 +33,13 @@
 .gnav {
   margin-top: 1.6666666667em;
 }
+.gnav__current {
+  display: inline-block;
+  transition: 0.3s ease-out;
+}
+.gnav__current:hover {
+  transform: scale(1.2);
+}
 .gnav__item {
   margin-top: 0.8333333333em;
   transition: 0.3s ease-out;
