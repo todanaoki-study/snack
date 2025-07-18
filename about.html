@@ -1,215 +1,271 @@
 <!DOCTYPE html>
 <html lang="ja">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>スナックかくれんぼアバウトページ</title>
-    <link rel="stylesheet" href="./CSS/common/common.min.css" />
-    <link rel="stylesheet" href="./CSS/about/about.min.css" />
-  </head>
 
-  <body>
-    <header></header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>スナックかくれんぼアバウトページ</title>
+  <link rel="stylesheet" href="./CSS/common/common.min.css" />
+  <link rel="stylesheet" href="./CSS/about/about.min.css" />
+</head>
 
-    <main class="main about" id="main">
-      <section class="mv">
-        <div class="mv__inner">
-          <h2 class="mv__catch">素敵なキャッチコピー</h2>
-          <p>素敵なサブタイトル</p>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <img class="header__logo" src="https://placehold.jp/50x50.png" alt="">
+
+      <button class="header__hamburger hamburger">
+        <!-- メニューの三本線 -->
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+        <span class="hamburger__line"></span>
+      </button>
+    </div>
+  </header>
+
+  <main class="main about" id="main">
+    <section class="mv">
+      <div class="mv__inner">
+        <h2 class="mv__catch">素敵なキャッチコピー</h2>
+        <p>素敵なサブタイトル</p>
+      </div>
+    </section>
+
+    <section class="content">
+      <div class="content__inner">
+        <article class="content__item">
+          <h2 class="content__title">怜ちゃんの想い</h2>
+          <p class="content__text">
+            こうこうこうでこうしたいからこう活動しています。この活動を通してこれこれをこういった方々にこうこうしていきたいと考えています。
+          </p>
+        </article>
+
+        <article class="content__item">
+          <h2 class="content__title">活動理由</h2>
+          <p class="content__text">
+            こうこうこうでこうしたいからこう活動しています。この活動を通してこれこれをこういった方々にこうこうこうしていきたいと考えています。
+          </p>
+        </article>
+
+        <article class="content__item">
+          <h2 class="content__title">お店のこと</h2>
+          <p class="content__text">
+            こうこうこうでこうしたいからこう活動しています。この活動を通してこれこれをこういった方々にこうこうしていきたいと考えています。
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="staff">
+      <div class="staff__inner">
+        <h2 class="staff__title">お店の人たち</h2>
+        <div class="staff__memberList">
+          <article class="staff__member">
+            <div class="staff__img">
+              <img src="" alt="" />
+            </div>
+            <dl class="staff__text">
+              <dt class="staff__name">れいちゃん</dt>
+              <dd class="staff__detail">
+                気軽にれいちゃんと呼んでね。 こうこうこういうときとか
+                こんな時とかいつでも声をかけてね。
+              </dd>
+            </dl>
+          </article>
+          <article class="staff__member">
+            <div class="staff__img">
+              <img src="" alt="" />
+            </div>
+            <dl class="staff__text">
+              <dt class="staff__name">ゆうすけさん</dt>
+              <dd class="staff__detail">
+                気軽に〇〇と呼んでください！ こうこうこういうときとか
+                こんな時とかいつでも声をかけてね。
+              </dd>
+            </dl>
+          </article>
         </div>
-      </section>
 
-      <section class="content">
-        <div class="content__inner">
-          <article class="content__item">
-            <h2 class="content__title">怜ちゃんの想い</h2>
-            <p class="content__text">
-              こうこうこうでこうしたいからこう活動しています。この活動を通してこれこれをこういった方々にこうこうしていきたいと考えています。
-            </p>
-          </article>
+        <article class="staff__help">
+          <h3 class="staff__subtitle">お手伝いさん</h3>
 
-          <article class="content__item">
-            <h2 class="content__title">活動理由</h2>
-            <p class="content__text">
-              こうこうこうでこうしたいからこう活動しています。この活動を通してこれこれをこういった方々にこうこうこうしていきたいと考えています。
-            </p>
-          </article>
-
-          <article class="content__item">
-            <h2 class="content__title">お店のこと</h2>
-            <p class="content__text">
-              こうこうこうでこうしたいからこう活動しています。この活動を通してこれこれをこういった方々にこうこうしていきたいと考えています。
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="staff">
-        <div class="staff__inner">
-          <h2 class="staff__title">お店の人たち</h2>
-          <div class="staff__memberList">
-            <article class="staff__member">
-              <div class="staff__img">
-                <img src="" alt="" />
-              </div>
-              <dl class="staff__text">
-                <dt class="staff__name">れいちゃん</dt>
-                <dd class="staff__detail">
-                  気軽にれいちゃんと呼んでね。 こうこうこういうときとか
-                  こんな時とかいつでも声をかけてね。
-                </dd>
-              </dl>
-            </article>
-            <article class="staff__member">
-              <div class="staff__img">
-                <img src="" alt="" />
-              </div>
-              <dl class="staff__text">
-                <dt class="staff__name">ゆうすけさん</dt>
-                <dd class="staff__detail">
-                  気軽に〇〇と呼んでください！ こうこうこういうときとか
-                  こんな時とかいつでも声をかけてね。
-                </dd>
-              </dl>
-            </article>
+          <div class="staff__list">
+            <dl class="staff__item">
+              <dt class="staff__img"><img src="" alt="" /></dt>
+              <dd class="staff__name">ニックネーム</dd>
+            </dl>
+            <dl class="staff__item">
+              <dt class="staff__img"><img src="" alt="" /></dt>
+              <dd class="staff__name">ニックネーム</dd>
+            </dl>
+            <dl class="staff__item">
+              <dt class="staff__img"><img src="" alt="" /></dt>
+              <dd class="staff__name">ニックネーム</dd>
+            </dl>
+            <dl class="staff__item">
+              <dt class="staff__img"><img src="" alt="" /></dt>
+              <dd class="staff__name">ニックネーム</dd>
+            </dl>
+            <dl class="staff__item">
+              <dt class="staff__img"><img src="" alt="" /></dt>
+              <dd class="staff__name">ニックネーム</dd>
+            </dl>
+            <dl class="staff__item">
+              <dt class="staff__img"><img src="" alt="" /></dt>
+              <dd class="staff__name">ニックネーム</dd>
+            </dl>
           </div>
+        </article>
+      </div>
+    </section>
 
-          <article class="staff__help">
-            <h3 class="staff__subtitle">お手伝いさん</h3>
+    <section class="review">
+      <div class="review__inner">
+        <h2 class="review__title">みんなの声</h2>
+        <div class="review__list">
+          <article class="review__item">
+            <p>行くと必ず顔見知りがいるから 交流できて楽しいです。</p>
+          </article>
 
-            <div class="staff__list">
-              <dl class="staff__item">
-                <dt class="staff__img"><img src="" alt="" /></dt>
-                <dd class="staff__name">ニックネーム</dd>
-              </dl>
-              <dl class="staff__item">
-                <dt class="staff__img"><img src="" alt="" /></dt>
-                <dd class="staff__name">ニックネーム</dd>
-              </dl>
-              <dl class="staff__item">
-                <dt class="staff__img"><img src="" alt="" /></dt>
-                <dd class="staff__name">ニックネーム</dd>
-              </dl>
-              <dl class="staff__item">
-                <dt class="staff__img"><img src="" alt="" /></dt>
-                <dd class="staff__name">ニックネーム</dd>
-              </dl>
-              <dl class="staff__item">
-                <dt class="staff__img"><img src="" alt="" /></dt>
-                <dd class="staff__name">ニックネーム</dd>
-              </dl>
-              <dl class="staff__item">
-                <dt class="staff__img"><img src="" alt="" /></dt>
-                <dd class="staff__name">ニックネーム</dd>
-              </dl>
+          <article class="review__item">
+            <p>スタッフさん 優しい！</p>
+          </article>
+
+          <article class="review__item">
+            <p>ブタメンうまい！</p>
+          </article>
+
+          <article class="review__item">
+            <p>楽しい！</p>
+          </article>
+
+          <article class="review__item">
+            <p>
+              ママ友交流の場でもあるし、 子供のふれあい場でもあるので
+              すごくいい活動だと思います。
+            </p>
+          </article>
+
+          <article class="review__item">
+            <p>子供がいつも楽しそうに お菓子を選んでいて微笑ましいです。</p>
+          </article>
+        </div>
+        <a class="review__btn" href="/">コメントを書いてみる</a>
+      </div>
+    </section>
+
+    <section class="snack">
+      <div class="snack__inner">
+        <h2 class="snack__title">おかし</h2>
+        <div class="snack__list">
+          <article class="snack__item">
+            <div class="snack__img">
+              <img src="" alt="" />
+            </div>
+            <div class="snack__text">
+              <p class="snack__name">お菓子の名前</p>
+              <p class="snack__price">10えん</p>
+            </div>
+          </article>
+
+          <article class="snack__item">
+            <div class="snack__img">
+              <img src="" alt="" />
+            </div>
+            <div class="snack__text">
+              <p class="snack__name">お菓子の名前</p>
+              <p class="snack__price">10えん</p>
+            </div>
+          </article>
+
+          <article class="snack__item">
+            <div class="snack__img">
+              <img src="" alt="" />
+            </div>
+            <div class="snack__text">
+              <p class="snack__name">お菓子の名前</p>
+              <p class="snack__price">10えん</p>
+            </div>
+          </article>
+
+          <article class="snack__item">
+            <div class="snack__img">
+              <img src="" alt="" />
+            </div>
+            <div class="snack__text">
+              <p class="snack__name">お菓子の名前</p>
+              <p class="snack__price">10えん</p>
+            </div>
+          </article>
+
+          <article class="snack__item">
+            <div class="snack__img">
+              <img src="" alt="" />
+            </div>
+            <div class="snack__text">
+              <p class="snack__name">お菓子の名前</p>
+              <p class="snack__price">10えん</p>
+            </div>
+          </article>
+
+          <article class="snack__item">
+            <div class="snack__img">
+              <img src="" alt="" />
+            </div>
+            <div class="snack__text">
+              <p class="snack__name">お菓子の名前</p>
+              <p class="snack__price">10えん</p>
             </div>
           </article>
         </div>
-      </section>
+      </div>
+    </section>
+  </main>
 
-      <section class="review">
-        <div class="review__inner">
-          <h2 class="review__title">みんなの声</h2>
-          <div class="review__list">
-            <article class="review__item">
-              <p>行くと必ず顔見知りがいるから 交流できて楽しいです。</p>
-            </article>
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__nav">
 
-            <article class="review__item">
-              <p>スタッフさん 優しい！</p>
-            </article>
+        <nav class="nav">
+          <ul class="nav__list">
+            <li class="nav__logo"><a href="index.html"><img src="https://placehold.jp/150x150.png" alt=""></a>
+            </li>
+            <li class="nav__item"><a href="street.html">かくれんぼ日記</a></li>
+            <li class="nav__item"><a href="street.html">Instagram</a></li>
+          </ul>
+        </nav>
 
-            <article class="review__item">
-              <p>ブタメンうまい！</p>
-            </article>
+        <div class="footer__menu">
+          <a href="index.html">ホーム</a>
+          <div class="footer__gnav">
+            <nav class="gnav">
+              <ul class="gnav__list">
+                <li class="gnav__item"><a href="about.html">スナックかくれんぼについて</a></li>
+                <li class="gnav__item"><a href="about.html">▶︎ れいちゃんの想い</a></li>
+                <li class="gnav__item"><a href="about.html">▶︎ スタッフ紹介</a></li>
+                <li class="gnav__item"><a href="about.html">▶︎ お客さんの声</a></li>
+                <li class="gnav__item"><a href="about.html">▶︎ お菓子の紹介</a></li>
+                <li class="gnav__item"><a href="about.html">▶︎ 店舗情報</a></li>
+              </ul>
+            </nav>
 
-            <article class="review__item">
-              <p>楽しい！</p>
-            </article>
-
-            <article class="review__item">
-              <p>
-                ママ友交流の場でもあるし、 子供のふれあい場でもあるので
-                すごくいい活動だと思います。
-              </p>
-            </article>
-
-            <article class="review__item">
-              <p>子供がいつも楽しそうに お菓子を選んでいて微笑ましいです。</p>
-            </article>
-          </div>
-          <a class="review__btn" href="/">コメントを書いてみる</a>
-        </div>
-      </section>
-
-      <section class="snack">
-        <div class="snack__inner">
-          <h2 class="snack__title">おかし</h2>
-          <div class="snack__list">
-            <article class="snack__item">
-              <div class="snack__img">
-                <img src="" alt="" />
-              </div>
-              <div class="snack__text">
-                <p class="snack__name">お菓子の名前</p>
-                <p class="snack__price">10えん</p>
-              </div>
-            </article>
-
-            <article class="snack__item">
-              <div class="snack__img">
-                <img src="" alt="" />
-              </div>
-              <div class="snack__text">
-                <p class="snack__name">お菓子の名前</p>
-                <p class="snack__price">10えん</p>
-              </div>
-            </article>
-
-            <article class="snack__item">
-              <div class="snack__img">
-                <img src="" alt="" />
-              </div>
-              <div class="snack__text">
-                <p class="snack__name">お菓子の名前</p>
-                <p class="snack__price">10えん</p>
-              </div>
-            </article>
-
-            <article class="snack__item">
-              <div class="snack__img">
-                <img src="" alt="" />
-              </div>
-              <div class="snack__text">
-                <p class="snack__name">お菓子の名前</p>
-                <p class="snack__price">10えん</p>
-              </div>
-            </article>
-
-            <article class="snack__item">
-              <div class="snack__img">
-                <img src="" alt="" />
-              </div>
-              <div class="snack__text">
-                <p class="snack__name">お菓子の名前</p>
-                <p class="snack__price">10えん</p>
-              </div>
-            </article>
-
-            <article class="snack__item">
-              <div class="snack__img">
-                <img src="" alt="" />
-              </div>
-              <div class="snack__text">
-                <p class="snack__name">お菓子の名前</p>
-                <p class="snack__price">10えん</p>
-              </div>
-            </article>
+            <nav class="gnav">
+              <ul class="gnav__list">
+                <li class="gnav__item"><a href="street.html">スナックかくれんぼについて</a></li>
+                <li class="gnav__item"><a href="street.html">▶︎ れいちゃんの想い</a></li>
+                <li class="gnav__item"><a href="street.html">▶︎ スタッフ紹介</a></li>
+                <li class="gnav__item"><a href="street.html">▶︎ お客さんの声</a></li>
+                <li class="gnav__item"><a href="street.html">▶︎ お菓子の紹介</a></li>
+                <li class="gnav__item"><a href="street.html">▶︎ 店舗情報</a></li>
+              </ul>
+            </nav>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+      <small class="footer__copy">&copy; snac.kkakurenbo</small>
+    </div>
+  </footer>
+  <script src="JS/all.js" defer></script>
+</body>
 
-    <footer></footer>
-  </body>
 </html>
