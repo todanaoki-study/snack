@@ -1,0 +1,236 @@
+@charset "UTF-8";
+@import "../common/common";
+
+// common.scss
+@mixin mix-inner($w: 90%, $mw: 1200px) {
+  width: $w;
+  max-width: $mw;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* mv */
+@mixin mv__inner {
+  @include mix-inner(90%, 1200px);
+}
+
+.mv__inner {
+  @include mv__inner;
+}
+
+/* content */
+@mixin content__inner {
+  @include mix-inner(90%, 1200px);
+}
+
+.content__inner {
+  @include content__inner;
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  position: relative;
+  gap: 150px;
+
+  @include mix-query("tablet") {
+    gap: 234px;
+  }
+}
+
+.content__item {
+  max-width: 250px;
+  width: (250 / 335) * 100%;
+  grid-column: 1;
+  justify-self: start;
+
+  &:nth-child(even) {
+    justify-self: end;
+  }
+
+  @include mix-query("tablet") {
+    max-width: 1152px;
+    width: (1152 / 1920) * 100%;
+  }
+}
+
+.content__text {
+  padding-top: 30px;
+}
+
+/* staff */
+.staff {
+  padding-top: 120px;
+
+  @include mix-query("tablet") {
+    padding-top: 180px;
+  }
+}
+
+@mixin staff__inner {
+  @include mix-inner(90%, 1200px);
+}
+
+.staff__inner {
+  @include staff__inner;
+}
+
+.staff__memberList {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 60px;
+}
+
+.staff__text {
+  margin: 8px 0 0 11.38px;
+
+  @include mix-query("tablet") {
+    margin-left: 0;
+  }
+}
+
+.staff__name {
+  font-size: 18px;
+}
+
+.staff__detail {
+  margin-top: 8px;
+}
+
+.staff__subtitle {
+  font-size: 22px;
+  margin-top: 60px;
+}
+
+.staff__help .staff__list {
+  padding-top: 65px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 86px;
+}
+
+.staff__help {
+  @include mix-query("tablet") {
+    padding-top: 180px;
+    gap: 230px;
+  }
+}
+
+.staff__help .staff__item {
+  max-width: 100px;
+  width: (88 / 335) * 100%;
+
+  @include mix-query("full") {
+    max-width: 258px;
+    width: (258 / 1920) * 100%;
+  }
+}
+
+.staff__help .staff__name {
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* review */
+.review {
+  padding-top: 120px;
+
+  @include mix-query("tablet") {
+    padding-top: 180px;
+  }
+}
+
+@mixin review__inner {
+  @include mix-inner(90%, 1200px);
+}
+
+.review__inner {
+  @include review__inner;
+}
+
+.review__list {
+  margin-top: 60px;
+}
+
+.review__item {
+  animation: floatUpDown 3s ease-in-out infinite;
+  // 雲の背景はSVGの予定
+}
+
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.review__btn {
+  background: #eee;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 60px auto 0;
+  max-width: 335px;
+  width: 100%;
+  padding: 10px 25px;
+
+  @include mix-query("tablet") {
+    margin-right: 0;
+  }
+}
+
+/* snack */
+.snack {
+  padding-top: 120px;
+}
+
+@mixin snack__inner {
+  @include mix-inner(90%, 1200px);
+}
+.snack__inner {
+  @include snack__inner;
+}
+
+.snack__list {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  gap: 29px;
+  scroll-behavior: smooth;
+  margin-top: 60px;
+  padding-bottom: 120px;
+
+  /* Firefox用 */
+  scrollbar-width: thin;
+  scrollbar-color: #bfbfbf transparent;
+}
+
+/* WebKit（Chrome, Safari, Edge）用 */
+.snack__list::-webkit-scrollbar {
+  height: 8px;
+}
+
+.snack__list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.snack__list::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+  transition: background-color 0.3s;
+}
+
+.snack__list::-webkit-scrollbar-thumb:hover {
+  background-color: #999;
+}
+
+.snack__text {
+  display: flex;
+  gap: 8px;
+}

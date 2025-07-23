@@ -51,7 +51,7 @@ img {
 
 //各セクション内に初めて出てくるタイトル
 h2 {
-    font-size: 30px;
+    font-size: 20px;
 }
 
 //仮
@@ -69,22 +69,39 @@ h2 {
     //sticky分の領域を確保
     min-height: 200vh;
 
-    &__container {
-        //コンテナ内で位置固定
-        position: sticky;
-        top: 0;
-        left: 0;
-        width: auto;
-        height: auto;
-
-        //画像がtransformで動くことを前もってブラウザに通知
-        will-change: transform;
-        //残りはjsで動かします。
-    }
-
     &__inner {
         @include mix-inner();
     }
 
-    & {}
+    &__content {
+        @include mix-flex();
+    }
+
+    &__frame {
+        display: block;
+        width: 45%;
+    }
+
+    &__info {
+        width: 45%;
+    }
+
+    &__list {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px solid #222;
+        @include mix-flex();
+    }
+
+    &__item {
+        font-size: 12px;
+
+        &:nth-child(odd) {
+            font-weight: bold;
+        }
+
+        &:nth-child(even) {
+            margin-left: 5px;
+        }
+    }
 }
