@@ -42,6 +42,11 @@ $breakpoints: (
   &__logo img {
     width: 200px;
   }
+
+  &__inst {
+    width: 27px;
+  }
+
   &__list {
     display: flex;
     flex-wrap: wrap;

@@ -6,6 +6,9 @@
 .nav__logo img {
   width: 200px;
 }
+.nav__inst {
+  width: 27px;
+}
 .nav__list {
   display: flex;
   flex-wrap: wrap;
