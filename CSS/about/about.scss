@@ -309,9 +309,6 @@ body {
 
 .snack__list {
   display: flex;
-  // display: grid;
-  // grid-template-columns: repeat(5, 1fr);
-  // grid-template-rows: repeat(2, auto);
   overflow-x: auto;
   white-space: nowrap;
   scroll-behavior: smooth;
