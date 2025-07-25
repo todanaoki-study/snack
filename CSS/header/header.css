@@ -17,6 +17,7 @@
 }
 .header__logo {
   display: block;
+  width: 100px;
 }
 
 .hamburger {
