@@ -49,7 +49,6 @@ $breakpoints: (
     display: block;
 }
 
-
 }
 
 .hamburger {
@@ -94,4 +93,81 @@ $breakpoints: (
 .thirdLineOpen {
     transform: rotate(-45deg);
     top: -20%;
+}
+
+
+/*menu*/
+.header__menu {
+    font-size: f-rem(14);
+
+    @include mix-query(desktop) {
+        font-size: f-rem(16);
+        width: 390px;
+    }
+}
+
+.header__menu::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 160px;
+    background: url(/img/illust/nav_bg.svg) repeat-x center bottom;
+}
+
+.inner {
+    padding: (70em/14) 0 (50em/14);
+    background-color: #815C41;
+}
+
+.menu {
+    @include mix-inner();
+    margin-top: (50em/14);
+    position: relative;
+
+    @include mix-query(desktop) {
+        margin-top: (70em/14);
+    }
+
+    &__item {
+        padding: (20em/14);
+        background-color: #ffffff;
+        border-radius: 0 10px 10px 0;
+        box-shadow: 8px 8px #b9b9b9;
+    }
+
+    &__list:first-child {
+        font-size: f-rem(16);
+        font-weight: 600;
+        border-bottom: dotted #E45656 2px;
+
+        @include mix-query(desktop) {
+            font-size: f-rem(18);
+        }
+    }
+
+    &__list:not(:first-child) {
+        margin: (10em/14) 0 0 (10em/14);
+    }
+
+    &__list {
+        a {
+            display: inline-block;
+            transition: .3s ease-out;
+        }
+
+        a:hover {
+            transform: scale(1.1);
+        }
+    }
+}
+
+.menu::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 15px;
+    height: 25px;
+    top: 20px;
+    left: -8px;
+    background-color: #E45656;
 }
