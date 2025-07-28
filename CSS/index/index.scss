@@ -15,7 +15,7 @@ $main-color: #F4EFE2;
 }
 
 $breakpoints: (
-    "tablet": "screen and (min-width: 640px)",
+    "tablet": "screen and (min-width: 429px)",
     "desktop": "screen and (min-width: 800px)",
     "full": "screen and (min-width: 1200px)",
     ) !default;
@@ -34,6 +34,8 @@ $breakpoints: (
 
 body {
     background: $main-color;
+    font-family: "Zen Maru Gothic",
+        sans-serif;
 }
 
 img {
@@ -44,53 +46,276 @@ img {
 
 .firstView {
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
+    background: #FCE6AC;
+    position: relative;
 
-
-    &__decoration {
-        position: relative;
-        z-index: 100;
-        width: 100%;
+    &__shutter {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
         height: 100vh;
+        width: 100%;
+        background: url(../../img/illust/shutter.svg)no-repeat center center/cover;
+        z-index: 200;
     }
 
     &__inner {
+        position: relative;
+        height: 100vh;
         @include mix-inner(
     );
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+
+    padding-top: 120px;
+    overflow: hidden;
+
+    @include mix-query(desktop) {
+        @include mix-flex(flex-start, space-between);
+        flex-wrap: nowrap;
+        padding-top: 200px;
+    }
 }
 
-&__img {
-    aspect-ratio: 9/16;
-    object-fit: cover;
+&__logo {
+    display: block;
+    width: 80%;
+    margin: 0 auto 45px auto;
+
+    @include mix-query(tablet) {
+        width: 28%;
+        margin: 0 auto 45px 0;
+    }
+
+    @include mix-query(desktop) {
+        width: 34%;
+    }
+
+    @include mix-query(full) {
+        width: 25%;
+    }
 }
 }
 
-.decoration {
+//ファーストビューのイメージと吹き出しのコンテナ。
+.decoImgs {
+    position: relative;
+    z-index: 10;
+
+    @include mix-query(tablet) {
+        z-index: 0;
+    }
+
+    @include mix-query(desktop) {
+        width: 50%;
+    }
+
+    @include mix-query(full) {
+        width: 60%;
+    }
+
     &__img {
-        position: absolute;
+        //ドーナツを後ろに隠すためのrelative
+        position: relative;
+        z-index: 1;
+        display: block;
+        width: 100%;
 
-        &:nth-child(1) {
-            bottom: -20%;
+        @include mix-query(tablet) {
+            display: block;
+        }
+    }
+
+    &__donut {
+        position: absolute;
+        bottom: -30%;
+        right: 1%;
+        transform: rotate(180deg);
+
+        //imgコンテナがあるため3番目
+        &:nth-child(3) {
+            display: none;
+
+            @include mix-query(desktop) {
+                display: block;
+            }
         }
 
-        &:nth-child(2) {
-            bottom: 0;
-            right: 0;
+        @include mix-query(tablet) {
+            width: 21%;
+            top: -10%;
+            transform: rotate(0);
+        }
 
+        //後ほど別imgに変換dnで切り替え。
+        @include mix-query(desktop) {
+            width: 30%;
+            top: 30%;
+            left: -10%;
+            display: none;
+        }
+    }
+
+    &__comment {
+        position: absolute;
+        bottom: -65%;
+        right: 0;
+        display: block;
+        width: 44%;
+
+        @include mix-query(tablet) {
+            bottom: auto;
+            top: -37%;
+            transform: rotate(180deg) scale(-1, 1);
+        }
+
+        @include mix-query(desktop) {
+            top: auto;
+            bottom: -25%;
+            left: -80%;
+            z-index: 10;
+            transform: scale(1, 1);
+            width: 100%;
+        }
+
+        @include mix-query(full) {
+            width: 85%;
+            left: -65%;
+            bottom: -10%;
+        }
+    }
+
+    &__speech {
+        display: block;
+        width: 100%;
+        position: relative;
+
+        &::after {
+            content: "探してみてね";
+            display: block;
+            position: absolute;
+            font-size: f-rem(20);
+            ;
+            width: 100%;
+            top: 35%;
+            left: 13%;
+
+            @include mix-query(tablet) {
+                transform: rotate(180deg) scale(-1, 1);
+                font-size: f-rem(25);
+            }
+
+            @include mix-query(desktop) {
+                transform: none;
+                font-size: f-rem(35);
+            }
+
+            @include mix-query(full) {
+                font-size: f-rem(55);
+            }
+        }
+    }
+}
+
+.shelf {
+    @include mix-flex(flex-end);
+    flex-wrap: nowrap;
+    position: absolute;
+    bottom: 0;
+
+    &__img {
+        display: block;
+        width: 20%;
+
+        @include mix-query(tablet) {
+            width: 15%;
+        }
+
+        @include mix-query(desktop) {
+            width: 12%;
+        }
+
+        @include mix-query(full) {
+            width: 10%;
+        }
+
+        &:nth-child(5) {
+            display: none;
+
+            @include mix-query(tablet) {
+                display: block;
+            }
+        }
+
+        &:nth-child(6) {
+            display: none;
+
+            @include mix-query(desktop) {
+                display: block;
+            }
+        }
+
+        &:nth-child(7) {
+            display: none;
+
+            @include mix-query(full) {
+                display: block;
+            }
         }
     }
 }
 
 .shop {
     position: relative;
-    z-index: 200;
-    margin-top: -80px;
+    margin: 120px 0;
     padding: 120px 0;
-    background: url(../../img/illust/shop__section.png) no-repeat top center/cover;
+    background-image: url(../../img/illust/rapping.svg), url(../../img/illust/rapper2.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position: center top, center bottom;
+    background-size: 429px, 429px;
+    background-color: #FDEFDE;
+
+
+    @include mix-query(tablet) {
+        background-size: 800px, 800px;
+        margin: 150px 0;
+        padding: 170px 0;
+    }
+
+    @include mix-query(desktop) {
+        background-size: 1200px, 1200px;
+        margin: 170px 0;
+        padding: 250px 0;
+    }
+
+    @include mix-query(full) {
+        background-image: url(../../img/illust/rapperPcTop.svg), url(../../img/illust/rapperPcBtm.svg);
+        background-size: 1920px, 1920px;
+        padding: 300px 0;
+        margin: 200px 0;
+    }
+
+    &__decoration {
+        display: block;
+        width: 35%;
+        position: absolute;
+        top: -8%;
+        right: 0;
+        z-index: -1;
+
+        @include mix-query(tablet) {
+            top: -11%;
+        }
+
+        @include mix-query(desktop) {
+            top: -15%;
+        }
+
+        @include mix-query(full) {
+            // top: -10%;
+            width: 20%;
+        }
+    }
 
     &__inner {
         @include mix-inner();
@@ -101,12 +326,60 @@ img {
         margin-bottom: 45px;
         text-align: center;
         font-weight: bold;
-        line-height: 1.2;
+        line-height: 1.5;
+
+        @include mix-query(tablet) {
+            line-height: 1.7;
+        }
+
+        @include mix-query(desktop) {
+            font-size: 30px;
+            margin-bottom: 100px;
+        }
     }
 
     &__overview {
-        line-height: 3;
+        line-height: 2;
         text-align: center;
+
+        @include mix-query(desktop) {
+            font-size: 18px;
+            line-height: 3;
+            width: 70%;
+            margin: 0 auto;
+        }
+
+        @include mix-query(full) {
+            font-size: 20px;
+        }
+    }
+}
+
+.conductor {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+
+    &__item {
+        display: block;
+        writing-mode: vertical-lr;
+        background: #fff;
+        border-radius: 15px;
+        padding: 10px;
+        transition: .3s;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        @include mix-query(desktop) {
+            writing-mode: horizontal-tb;
+        }
     }
 }
 
@@ -120,41 +393,74 @@ img {
 
     &__content {
         width: 75%;
-    }
 
-    &__content:nth-child(1) {
-        margin-right: auto;
-        margin-bottom: 75px;
-
-        & .explanation__comment {
-            background: url(../../img/illust/comment.png)no-repeat center center/cover;
-            width: 105%;
-            margin-left: 60px;
-            padding: 15px 25px;
-            font-size: 14px;
-        }
-    }
-
-    &__content:nth-child(2) {
-        margin-left: auto;
-
-        & .explanation__comment {
-            background: url(../../img/illust/comment_r.png)no-repeat center center/cover;
-            width: 105%;
-            margin-right: 60px;
-            padding: 15px 20px 30px 20px;
-            font-size: 14px;
+        @include mix-query(tablet) {
+            width: 60%;
         }
 
-        & .explanation__img {
-            display: block;
+        @include mix-query(desktop) {
+            width: 50%;
+        }
+
+        &:nth-child(1) {
+            margin-bottom: 65px;
+
+            & .explanation__comment {
+                margin-left: auto;
+            }
+        }
+
+        &:nth-child(2) {
             margin-left: auto;
+
+            & .explanation__comment {
+                margin-right: auto;
+            }
+
+            & .explanation__img {
+                transform: scale(-1, 1);
+                position: relative;
+                z-index: -1;
+            }
+
+            & .explanation__icon {
+                margin-left: auto;
+            }
         }
+    }
+
+    &__comment {
+        position: relative;
     }
 
     &__img {
+        width: 100%;
+    }
+
+    &__text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 95%;
+        transform: translate(-50%, -60%);
+        font-size: 14px;
+
+        @include mix-query(tablet) {
+            font-size: 18px;
+        }
+
+        @include mix-query(desktop) {
+            font-size: 20px;
+        }
+
+        @include mix-query(full) {
+            font-size: 22px;
+        }
+    }
+
+    &__icon {
+        display: block;
         width: 75px;
-        height: auto;
     }
 }
 
@@ -162,6 +468,10 @@ img {
     margin-top: 120px;
     background: #E8D8A9;
     padding: 60px 0;
+
+    @include mix-query(desktop) {
+        padding: 120px 0;
+    }
 
     &__inner {
         @include mix-inner();
@@ -171,22 +481,40 @@ img {
         border: 1px solid #72550B;
         box-shadow: 6px 6px 0px 0px rgba(231, 147, 114, 1);
         padding: 30px 15px;
+
+        @include mix-query(desktop) {
+            padding: 45px 25px;
+        }
     }
 
     &__title {
         text-align: center;
         margin-bottom: 45px;
+        font-size: 20px;
+        font-weight: bold;
+
+        @include mix-query(desktop) {
+            font-size: 25px;
+        }
     }
 
     &__container {
         width: 75%;
         margin: 0 auto;
+
+        @include mix-query(desktop) {
+            width: 50%;
+        }
     }
 
     &__list {
         border-bottom: 1px dashed #72550B;
         margin-bottom: 30px;
         text-align: center;
+
+        @include mix-query(desktop) {
+            margin-bottom: 45px;
+        }
     }
 
     &__more {
@@ -205,20 +533,27 @@ img {
             height: 3px;
             background: #EF9393;
         }
+
+        &:hover {
+            & .note__text {
+                transform: scale(1.1);
+            }
+        }
     }
 
     &__text {
+        transition: .3s;
         display: block;
         margin-right: 5px;
-        transition: .3s;
-
-        &:hover {
-            transform: scale(1.1);
-        }
+        font-weight: bold;
     }
 }
 
 .noteList {
+    @include mix-query(desktop) {
+        @include mix-flex(center, center);
+        flex-wrap: nowrap;
+    }
 
     &__item {
         font-size: 14px;
@@ -231,11 +566,16 @@ img {
         &:nth-child(2) {
             margin-bottom: 5px;
         }
+
+        @include mix-query(desktop) {
+            font-size: 18px;
+        }
     }
 }
 
 .instagram {
     margin-top: 120px;
+    margin-bottom: 120px;
 
     &__titleContent {
         @include mix-flex(center, center);
@@ -245,6 +585,11 @@ img {
     &__title {
         text-align: center;
         margin-right: 10px;
+        font-weight: bold;
+
+        @include mix-query(desktop) {
+            font-size: 25px;
+        }
     }
 
     &__titleDeco {
@@ -260,6 +605,13 @@ img {
 
     &__inner {
         @include mix-inner();
+    }
+
+    &__container {
+        @include mix-query(full) {
+            @include mix-flex();
+            flex-wrap: nowrap;
+        }
     }
 }
 
@@ -280,7 +632,7 @@ img {
         display: block;
         width: 90%;
         height: 90%;
-        background: #2d2d2d;
+        object-fit: cover;
     }
 }
 
@@ -322,6 +674,10 @@ img {
     grid-template-rows: 501fr 168fr;
     max-width: 800px;
     margin: auto;
+
+    @include mix-query(full) {
+        width: 120%;
+    }
 
     & .grid__item {
         position: relative;

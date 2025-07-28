@@ -5,11 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>スナックかくれんぼトップページ</title>
+
+    <!-- googleFont -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet""
+    rel=" stylesheet">
+
     <!-- 各CSS読み込み -->
     <link rel="stylesheet" href="./CSS/common/common.min.css">
     <link rel="stylesheet" href="./CSS/index/index.min.css">
-
-
 </head>
 
 <body id="index">
@@ -29,20 +34,47 @@
 
     <main class="main" id="main">
         <section class="firstView">
-
-            <div class="firstView__decoration decoration">
-                <img class="decoration__img" src="./img/illust/donatu.png" alt="">
-                <img class="decoration__img" src="./img/illust/sail.png" alt="">
-            </div>
-
+            <span class="firstView__shutter">
+            </span>
             <div class="firstView__inner">
-                <img class="firstView__img" src="https://placehold.jp/1041x543.png" alt="">
+                <img class="firstView__logo" src="./img/logo/logo.svg" alt="">
+
+                <div class="firstView__container decoImgs">
+                    <img class="decoImgs__img" src="https://placehold.jp/870x630.png" alt="">
+                    <!-- pc未満ドーナツ -->
+                    <img class="decoImgs__donut" src="./img//illust/donatu.png" alt="">
+                    <!-- pc以上ドーナツ -->
+                    <img class="decoImgs__donut" src="./img/illust/peek.svg" alt="">
+                    <div class="decoImgs__comment">
+                        <div class="decoImgs__speech"><img src="./img/illust/speech.svg" alt=""></div>
+                    </div>
+                </div>
+
+                <div class="firstView__shelf shelf">
+                    <img class="shelf__img" src="./img/illust/footer_deco1.svg" alt="">
+                    <img class="shelf__img" src="./img/illust/footer_deco2.svg" alt="">
+                    <img class="shelf__img" src="./img/illust/footer_deco3.svg" alt="">
+                    <img class="shelf__img" src="./img/illust/footer_deco4.svg" alt="">
+                    <img class="shelf__img" src="./img/illust/footer_deco5.svg" alt="">
+
+                    <img class="shelf__img" src="./img/illust/footer_deco6.svg" alt="">
+                    <img class="shelf__img" src="./img/illust/footer_deco7.svg" alt="">
+                </div>
             </div>
         </section>
 
         <section class="shop">
+            <span class="shop__decoration">
+                <img class="shop__decoImg" src="./img/illust/shop_snack.svg" alt="">
+            </span>
+
+            <div class="shop__label conductor">
+                <a class="conductor__item" href="about.html">お店の秘密</a>
+                <a class="conductor__item" href="#">かくれんぼ日記</a>
+                <a class="conductor__item" href="street.html">ようこそ内田橋へ</a>
+            </div>
             <div class="shop__inner">
-                <h2 class="shop__title">「子どもと大人がつながる、まちの小さなよりみち」</h2>
+                <h2 class="shop__title">子どもと大人が繋がるまちの小さな寄り道</h2>
                 <p class="shop__overview">
                     スナックかくれんぼは、子どもたちがふらっと立ち寄り、大人や地域の人とおしゃべりできる駄菓子屋です。 私たちは、子どもの「居場所づくり」にとって、大人との接点が欠かせないと考えています。
                     人と人が顔を合わせて関わることで、まちにあたたかい空気が生まれていく。 ここが、そんなつながりのきっかけになる場所であれたらと思っています。
@@ -53,13 +85,18 @@
         <section class="explanation">
             <div class="explanation__inner">
                 <div class="explanation__content">
-                    <p class="explanation__comment">スナックかくれんぼってどんなところのなの？</p>
-                    <img class="explanation__img" src="img/illust/explanation_yellow.png" alt="">
+                    <div class="explanation__comment">
+                        <p class="explanation__text">スナックかくれんぼってどんなところのなの？</p>
+                        <img class="explanation__img" src="./img/illust/comment.png" alt="">
+                    </div>
+                    <img class="explanation__icon" src="img/illust/explanation_yellow.png" alt="">
                 </div>
                 <div class="explanation__content">
-                    <p class="explanation__comment">かくれんぼをしながら、移動する駄菓子屋だよ!!
-                        毎週木曜日の夕方に内田橋商店街のどこかに現れるから、探してみてね〜。</p>
-                    <img class="explanation__img" src="img/illust/explanation_green.png" alt="">
+                    <div class="explanation__comment">
+                        <p class="explanation__text">内田橋商店街のどこかに隠れている不思議な駄菓子屋のことだよ！</p>
+                        <img class="explanation__img" src="./img/illust/comment.png" alt="">
+                    </div>
+                    <img class="explanation__icon" src="img/illust/explanation_green.png" alt="">
                 </div>
             </div>
         </section>
@@ -96,7 +133,7 @@
                     </dl>
 
                     <div class="note__more">
-                        <a href="#" class="note__text">もっと覗いてみる</a>
+                        <a href="https://note.com/" class="note__text">もっと覗いてみる</a>
                         <img class="note__arrow" src="./img/illust/arrow.png" alt="">
                     </div>
                 </div>
@@ -119,41 +156,41 @@
                     <div class="instagram__grid grid">
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_gummy.svg" alt="" />
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/1.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_gumBlue.svg" alt="" />
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/2.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_gumRed.svg" alt="" />
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/3.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_takoyaki.svg" alt="" />
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/4.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_jelly.svg" alt="" />
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/5.jpg"></img>
                         </div>
                     </div>
                     <div class="instagram__grid grid">
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_cigarette.svg" alt="">
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/6.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_choco.svg" alt="">
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/7.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_ramune.svg" alt="">
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/8.jpg"></img>
                         </div>
                         <div class="grid__item">
                             <img class="grid__img" src="./img/illust/inst_melon.svg" alt="">
-                            <span class="grid__bg"></span>
+                            <img class="grid__bg" src="./img/photo/8.jpg"></img>
                         </div>
                     </div>
                 </div>
@@ -165,41 +202,45 @@
         <section class="map">
             <!-- 背景ようのコンテナ -->
             <div class="map__slider">
-            </div>
-            <!--  -->
-            <div class="map__inner">
-                <div class="map__content">
 
-                    <div class="map__frame">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1105.1822712965643!2d136.90637716856182!3d35.11565587951909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bac7d252995%3A0x24b9daf6c5a01907!2z5YaF55Sw5qmL5ZWG5bqX6KGX77yI6YCa56ewOuODgOODkOOCt--8iQ!5e0!3m2!1sja!2sjp!4v1753242329272!5m2!1sja!2sjp"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                <img class="map__img" src="./img/illust/map.png" alt="">
 
-                    <div class="map__info">
-                        <dl class="map__list">
-                            <dt class="map__item">お店のなまえ</dt>
-                            <dd class="map__item">スナックかくれんぼ</dd>
-                        </dl>
+                <div class="map__inner">
+                    <div class="map__content">
+                        <div class="map__frame">
+                            <iframe class="map__googleMap"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d407.95579503994315!2d136.9069577050093!3d35.115540439332264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bac7d252995%3A0x24b9daf6c5a01907!2z5YaF55Sw5qmL5ZWG5bqX6KGX77yI6YCa56ewOuODgOODkOOCt--8iQ!5e0!3m2!1sja!2sjp!4v1753667946587!5m2!1sja!2sjp"
+                                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
 
-                        <dl class="map__list">
-                            <dt class="map__item">お店のなまえ</dt>
-                            <dd class="map__item">スナックかくれんぼ</dd>
-                        </dl>
+                        <div class="map__info">
+                            <dl class="map__list">
+                                <dt class="map__item">お店のなまえ</dt>
+                                <dd class="map__item">スナックかくれんぼ</dd>
+                            </dl>
 
-                        <dl class="map__list">
-                            <dt class="map__item">お店のなまえ</dt>
-                            <dd class="map__item">スナックかくれんぼ</dd>
-                        </dl>
+                            <dl class="map__list">
+                                <dt class="map__item">日にち</dt>
+                                <dd class="map__item">毎週木曜</dd>
+                            </dl>
 
-                        <dl class="map__list">
-                            <dt class="map__item">お店のなまえ</dt>
-                            <dd class="map__item">スナックかくれんぼ</dd>
-                        </dl>
+                            <dl class="map__list">
+                                <dt class="map__item">時間</dt>
+                                <dd class="map__item">夕方3時〜6時</dd>
+                            </dl>
+
+                            <dl class="map__list">
+                                <dt class="map__item">住所</dt>
+                                <dd class="map__item">内田橋商店街のどこか</dd>
+                            </dl>
+                        </div>
                     </div>
                 </div>
+                <span class="map__speech"><img src="./img/illust/speech2.png" alt=""></span>
+                <span class="map__speech"><img src="./img/illust/speechPC2.png" alt=""></span>
+
             </div>
+            <!--  -->
         </section>
 
         <footer class="footer">
@@ -248,13 +289,14 @@
                 <small class="footer__copy">&copy; snac.kkakurenbo</small>
             </div>
         </footer>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+        <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script> -->
 
         <script src="JS/all.js" defer></script>
         <script src="JS/index.js" defer></script>
 
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
-        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        <script defer src="https: //cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     </main>
 
 </body>
