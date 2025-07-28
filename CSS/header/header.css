@@ -61,12 +61,13 @@
 
 /*menu*/
 .header__menu {
+  display: none;
+  width: 390px;
   font-size: 0.875rem;
 }
 @media screen and (min-width: 800px) {
   .header__menu {
     font-size: 1rem;
-    width: 390px;
   }
 }
 
