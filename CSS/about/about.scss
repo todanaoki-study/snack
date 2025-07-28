@@ -1,6 +1,13 @@
 @charset "UTF-8";
 @import "../common/common";
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 // common.scss
 @mixin mix-inner($w: 90%, $mw: 1200px) {
   width: $w;
@@ -21,9 +28,118 @@ body {
   @include mv__inner;
 }
 
+.slide-wrapper {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  /*スライド全体 */
+  width: 300%;
+  height: 100%;
+  display: flex;
+  transition: all 0.3s;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide div {
+  /* スライド */
+  width: 33.33%;
+  height: 100%;
+  font-size: 16px;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide1 {
+  transform: translateX(0);
+}
+
+.slide2 {
+  transform: translateX(-33.33%);
+}
+
+.slide3 {
+  transform: translateX(-66.66%);
+}
+
+.next {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 10px;
+  bottom: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 3px #000;
+  border-right: solid 3px #000;
+  -webkit-transform: rotate(45deg) translateY(50%);
+  transform: rotate(45deg) translateY(50%);
+}
+
+.prev {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  left: 25px;
+  bottom: 50%;
+  z-index: 10;
+  cursor: pointer;
+  border-top: solid 3px #000;
+  border-right: solid 3px #000;
+  -webkit-transform: rotate(-135deg) translateY(-50%);
+  transform: rotate(-135deg) translateY(-50%);
+}
+
+.indicator {
+  width: 100%;
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  column-gap: 18px;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+}
+
+.indicator li {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  list-style: none;
+  background-color: #fff;
+  border: 2px #000 solid;
+  cursor: pointer;
+}
+
+.indicator li:first-of-type {
+  background-color: #000;
+}
+
 /* content */
 @mixin content__inner {
   @include mix-inner(90%, 1200px);
+}
+
+.wave {
+  margin-top: 200px;
+  position: relative;
+  height: 200px; /*何も表示されない場合は各波の親要素に高さを持たせましょう。*/
+}
+canvas {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 
 .content {
@@ -112,7 +228,7 @@ body {
   @include mix-query("tablet") {
     left: 120px;
     top: -100px;
-    width: 350px; // 拡大してバランス調整
+    width: 350px;
   }
 
   img {
@@ -123,7 +239,7 @@ body {
 
 /* staff */
 .staff {
-  padding-top: 120px;
+  padding: 150px 0;
   background-color: #e9cdb0;
 
   @include mix-query("tablet") {
@@ -146,6 +262,29 @@ body {
   font-size: 30px;
 }
 
+.staff__title::before,
+.staff__title::after {
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+.staff__title::before {
+  background-image: url("../../img/illust/about-star.png");
+  width: 55px;
+  height: 51px;
+}
+
+.staff__title::after {
+  background-image: url("../../img/illust/about-hurt.png");
+  width: 45px;
+  height: 49px;
+}
+
 .staff__memberList {
   display: grid;
   grid-template-columns: repeat(1, 2fr);
@@ -160,11 +299,6 @@ body {
 .staff__member {
   background-color: #fff;
   padding: 23px 21px;
-
-  // @include mix-query("tablet") {
-  //   max-width: 483px;
-  //   width: (483 / 1040) * 100%;
-  // }
 }
 
 .staff__text {
@@ -186,6 +320,31 @@ body {
 .staff__subtitle {
   font-size: 22px;
   margin-top: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+
+.staff__subtitle::before,
+.staff__subtitle::after {
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  vertical-align: middle;
+  margin: 0 8px;
+}
+
+.staff__subtitle::before {
+  background-image: url("../../img/illust/about-flower.png");
+  width: 48px;
+  height: 52px;
+}
+
+.staff__subtitle::after {
+  background-image: url("../../img/illust/about-rabbit.png");
+  width: 53px;
+  height: 63px;
 }
 
 .staff__help .staff__list {
@@ -220,10 +379,51 @@ body {
   margin-top: 8px;
 }
 
+.staff__img {
+  position: relative;
+  display: inline-block;
+}
+
+.staff__img::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 60px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.staff__help .staff__img {
+  width: 130px;
+  height: 54px;
+}
+
+.mast-1::before {
+  background-image: url("../../img/illust/about-mast1.svg");
+}
+.mast-2::before {
+  background-image: url("../../img/illust/about-mast2.svg");
+}
+
+.mast-3::before {
+  background-image: url("../../img/illust/about-mast3.svg");
+}
+.mast-4::before {
+  background-image: url("../../img/illust/about-mast4.svg");
+}
+.mast-5::before {
+  background-image: url("../../img/illust/about-mast5.svg");
+}
+
 /* review */
 .review {
   padding-top: 120px;
-  background-color: #e9cdb0;
+  background: url("../../img/illust/about-reviewBg.svg") no-repeat center center / cover;
 
   @include mix-query("tablet") {
     padding-top: 180px;
@@ -240,29 +440,30 @@ body {
 
 .review__title {
   text-align: center;
+  font-size: 30px;
 }
 
 .review__list {
   margin-top: 60px;
   position: relative;
   padding: 2rem;
-  min-height: 650px;
+  min-height: 550px;
 }
 
 .review__item {
-  position: absolute; // ← ここが重要
+  position: absolute;
   width: 300px;
-  height: 130px;
   text-align: center;
   background-color: #c4d9ac;
   padding: 30px 42px;
-  font-size: 18px;
+  font-size: 16px;
   transition: transform 0.3s;
   z-index: 1;
+  border: #72550b 2px solid;
+  border-radius: 15px;
 }
 
 .review__btn {
-  background: #eee;
   border-radius: 10px;
   position: relative;
   display: flex;
@@ -280,12 +481,32 @@ body {
 
 .reviewBottom {
   background-color: #f4efe2;
+  width: 100%;
+  transform: translateY(10);
+  height: 200%;
+}
+
+.bg-doodles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.doodle {
+  position: absolute;
+  width: 60px;
+  opacity: 0.5;
+  transition: transform 0.3s ease;
 }
 
 /* snack */
 .snack {
   padding-top: 120px;
   background-color: #f4efe2;
+  margin-top: -10px;
 }
 
 @mixin snack__inner {
