@@ -99,11 +99,12 @@ $breakpoints: (
 
 /*menu*/
 .header__menu {
+    display: none;
+    width: 390px;
     font-size: f-rem(14);
 
     @include mix-query(desktop) {
         font-size: f-rem(16);
-        width: 390px;
     }
 }
 
