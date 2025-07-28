@@ -9,6 +9,9 @@
   margin-right: auto;
 }
 
+body {
+  overflow-x: hidden;
+}
 /* mv */
 @mixin mv__inner {
   @include mix-inner(90%, 1200px);
@@ -21,6 +24,17 @@
 /* content */
 @mixin content__inner {
   @include mix-inner(90%, 1200px);
+}
+
+.content {
+  background: linear-gradient(to bottom, #97c1cb 0%, #4c85b1 100%);
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 100px;
+}
+
+.contentTop {
+  vertical-align: text-top;
 }
 
 .content__inner {
@@ -51,13 +65,66 @@
   }
 }
 
+.content__title {
+  font-weight: 500;
+}
+
+.content__item:nth-child(1) .content__title {
+  color: #3777b2;
+}
+
+.content__item:nth-child(2) .content__title {
+  color: #1c5990;
+}
+
+.content__item:nth-child(3) .content__title {
+  color: #12487a;
+}
+
 .content__text {
-  padding-top: 30px;
+  padding: 22.5px 5px;
+  font-size: 20px;
+  color: #483505;
+  border: #72550b 2px solid;
+  border-radius: 20px;
+  background-color: rgba($color: #fff, $alpha: 0.3);
+}
+
+.content__bottom {
+  width: 100%;
+  transform: translateY(10);
+  height: 200%;
+}
+
+.contentImg {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.content__img {
+  position: absolute;
+  top: -40px;
+  left: 20px;
+  width: 120px;
+
+  @include mix-query("tablet") {
+    left: 120px;
+    top: -100px;
+    width: 350px; // 拡大してバランス調整
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 /* staff */
 .staff {
   padding-top: 120px;
+  background-color: #e9cdb0;
 
   @include mix-query("tablet") {
     padding-top: 180px;
@@ -72,10 +139,32 @@
   @include staff__inner;
 }
 
+.staff__title {
+  color: #483505;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
 .staff__memberList {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 2fr);
   gap: 60px;
+  margin-top: 140px;
+
+  @include mix-query("tablet") {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.staff__member {
+  background-color: #fff;
+  padding: 23px 21px;
+
+  // @include mix-query("tablet") {
+  //   max-width: 483px;
+  //   width: (483 / 1040) * 100%;
+  // }
 }
 
 .staff__text {
@@ -87,7 +176,7 @@
 }
 
 .staff__name {
-  font-size: 18px;
+  font-size: 28px;
 }
 
 .staff__detail {
@@ -114,12 +203,15 @@
 }
 
 .staff__help .staff__item {
-  max-width: 100px;
-  width: (88 / 335) * 100%;
+  max-width: 297.3px;
+  width: (297.3 / 335) * 100%;
+  background-color: #fff;
+  padding: 23px 19.82px;
+  margin: 0 auto;
 
   @include mix-query("full") {
-    max-width: 258px;
-    width: (258 / 1920) * 100%;
+    // max-width: 297.3px;
+    // width: (297.3 / 1920) * 100%;
   }
 }
 
@@ -131,6 +223,7 @@
 /* review */
 .review {
   padding-top: 120px;
+  background-color: #e9cdb0;
 
   @include mix-query("tablet") {
     padding-top: 180px;
@@ -145,25 +238,27 @@
   @include review__inner;
 }
 
+.review__title {
+  text-align: center;
+}
+
 .review__list {
   margin-top: 60px;
+  position: relative;
+  padding: 2rem;
+  min-height: 650px;
 }
 
 .review__item {
-  animation: floatUpDown 3s ease-in-out infinite;
-  // 雲の背景はSVGの予定
-}
-
-@keyframes floatUpDown {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+  position: absolute; // ← ここが重要
+  width: 300px;
+  height: 130px;
+  text-align: center;
+  background-color: #c4d9ac;
+  padding: 30px 42px;
+  font-size: 18px;
+  transition: transform 0.3s;
+  z-index: 1;
 }
 
 .review__btn {
@@ -183,54 +278,77 @@
   }
 }
 
+.reviewBottom {
+  background-color: #f4efe2;
+}
+
 /* snack */
 .snack {
   padding-top: 120px;
+  background-color: #f4efe2;
 }
 
 @mixin snack__inner {
   @include mix-inner(90%, 1200px);
 }
+
 .snack__inner {
   @include snack__inner;
+}
+
+.snack__title {
+  text-align: center;
+}
+
+.snack__intro {
+  width: (856 / 1040) * 100%;
+  margin: 20px auto 0 auto;
+  margin-top: 20px;
+  text-align: center;
 }
 
 .snack__list {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
-  gap: 29px;
   scroll-behavior: smooth;
+  gap: 0;
   margin-top: 60px;
   padding-bottom: 120px;
-
-  /* Firefox用 */
-  scrollbar-width: thin;
-  scrollbar-color: #bfbfbf transparent;
+  position: relative;
 }
 
-/* WebKit（Chrome, Safari, Edge）用 */
-.snack__list::-webkit-scrollbar {
-  height: 8px;
+.snack__item {
+  flex: 0 0 auto;
+  width: 204px;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
 }
 
-.snack__list::-webkit-scrollbar-track {
-  background: transparent;
+.snack__item:nth-child(even) {
+  margin-top: 210px;
 }
-
-.snack__list::-webkit-scrollbar-thumb {
-  background-color: #bbb;
-  border-radius: 9999px;
-  border: 2px solid transparent;
-  background-clip: content-box;
-  transition: background-color 0.3s;
-}
-
-.snack__list::-webkit-scrollbar-thumb:hover {
-  background-color: #999;
+.snack__item:nth-child(odd) {
+  transform: translateY(0px);
 }
 
 .snack__text {
+  width: 204px;
+}
+
+.snack__deco {
+  background-color: #fff;
+  height: 18px;
+}
+
+.snack__name {
+  font-size: 20px;
+  text-align: center;
+  height: 49px;
   display: flex;
-  gap: 8px;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #ddbda5;
 }

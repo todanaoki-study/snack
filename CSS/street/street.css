@@ -3,13 +3,20 @@
 /*@mixin*/
 /*----------module----------*/
 /*post*/
+.post {
+  margin-top: 3.125em;
+}
 @media (800px <= width) {
   .post {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-end;
+    margin-top: 4.375em;
   }
+}
+.post__image {
+  position: relative;
 }
 @media (800px <= width) {
   .post__image {
@@ -22,6 +29,12 @@
   -o-object-fit: cover;
      object-fit: cover;
 }
+.post__image .info__feet {
+  position: absolute;
+  width: 200px;
+  left: 0;
+  bottom: 0;
+}
 .post__text {
   margin-top: 0.625em;
 }
@@ -32,10 +45,22 @@
   }
 }
 
+.post:last-child {
+  margin-top: 4.375em;
+}
 @media (800px <= width) {
   .post:last-child {
     flex-direction: row-reverse;
+    margin-top: 6.25em;
   }
+}
+.post:last-child .info__feet {
+  position: absolute;
+  width: 200px;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  transform: rotate(90deg);
 }
 
 /*----------street.html----------*/
@@ -48,6 +73,7 @@ body {
   font-weight: 400;
   line-height: 1.6;
   letter-spacing: 0.05 rem;
+  overflow-x: hidden;
 }
 
 /*street*/
@@ -88,6 +114,9 @@ body {
 }
 
 /*info*/
+.info {
+  padding-bottom: 9.375em;
+}
 .info__inner {
   width: 90%;
   max-width: 1200px;
@@ -105,24 +134,37 @@ body {
     line-height: 1.6;
   }
 }
-.info__post {
-  margin-top: 3.125em;
-}
-@media (800px <= width) {
-  .info__post {
-    margin-top: 4.375em;
-  }
-}
-.info__post:last-child {
-  margin-top: 4.375em;
-}
-@media (800px <= width) {
-  .info__post:last-child {
-    margin-top: 6.25em;
-  }
-}
 
 /*intro*/
+.intro {
+  padding: 9.375em;
+  position: relative;
+  color: #ffffff;
+  background: rgb(92, 106, 148) url(/img/illust/intro_deco1.svg) repeat-x top left;
+  background-size: 60px;
+}
+@media (800px <= width) {
+  .intro {
+    background-size: 80px;
+  }
+}
+.intro__top {
+  padding: 1.875em;
+  position: absolute;
+  width: 40%;
+  right: -10px;
+  top: 0;
+  transform: translateY(-50%);
+  background-color: rgb(92, 106, 148);
+  border-radius: 50% 50% 0 50%;
+}
+@media (800px <= width) {
+  .intro__top {
+    padding: 3.125em;
+    width: 480px;
+    top: 0;
+  }
+}
 .intro__inner {
   width: 90%;
   max-width: 1200px;
@@ -173,5 +215,18 @@ body {
   .intro__image img:last-of-type {
     margin-top: 0;
   }
+}
+.intro__deco {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 150px;
+}
+.intro__deco:last-of-type {
+  position: absolute;
+  left: auto;
+  right: 0;
+  bottom: 0;
+  transform: scaleX(-1);
 }
 /*# sourceMappingURL=street.css.map */

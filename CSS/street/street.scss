@@ -40,12 +40,17 @@ $breakpoints: (
 
 /*post*/
 .post {
-    @include m-query(desktop) {
-        @include m-flex(flex-end
+    margin-top: (50em/16
     );
+
+@include m-query(desktop) {
+    @include m-flex(flex-end);
+    margin-top: (70em/16);
 }
 
 &__image {
+    position: relative;
+
     @include m-query(desktop) {
         width: (500/1180)*100%;
     }
@@ -54,6 +59,13 @@ $breakpoints: (
         width: 100%;
         aspect-ratio: 1/1;
         object-fit: cover;
+    }
+
+    .info__feet {
+        position: absolute;
+        width: 200px;
+        left: 0;
+        bottom: 0;
     }
 }
 
@@ -68,8 +80,20 @@ $breakpoints: (
 }
 
 .post:last-child {
+    margin-top: (70em/16);
+
     @include m-query(desktop) {
         flex-direction: row-reverse;
+        margin-top: (100em/16);
+    }
+
+    .info__feet {
+        position: absolute;
+        width: 200px;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        transform: rotate(90deg);
     }
 }
 
@@ -86,6 +110,7 @@ body {
     font-weight: 400;
     line-height: (25.6/16);
     letter-spacing: (50/1000)rem;
+    overflow-x: hidden;
 }
 
 /*street*/
@@ -126,6 +151,8 @@ body {
 
 /*info*/
 .info {
+    padding-bottom: (150em/16);
+
     &__inner {
         @include m-inner();
     }
@@ -140,26 +167,37 @@ body {
             line-height: (48/30);
         }
     }
-
-    &__post {
-        margin-top: (50em/16);
-
-        @include m-query(desktop) {
-            margin-top: (70em/16);
-        }
-    }
-
-    &__post:last-child {
-        margin-top: (70em/16);
-
-        @include m-query(desktop) {
-            margin-top: (100em/16);
-        }
-    }
 }
 
 /*intro*/
 .intro {
+    padding: (150em/16);
+    position: relative;
+    color: #ffffff;
+    background: rgba(92, 106, 148, 1) url(/img/illust/intro_deco1.svg) repeat-x top left;
+    background-size: 60px;
+
+    @include m-query(desktop) {
+        background-size: 80px;
+    }
+
+    &__top {
+        padding: (30em/16);
+        position: absolute;
+        width: 40%;
+        right: -10px;
+        top: 0;
+        transform: translateY(-50%);
+        background-color: rgba(92, 106, 148, 1);
+        border-radius: 50% 50% 0 50%;
+
+        @include m-query(desktop) {
+            padding: (50em/16);
+            width: 480px;
+            top: 0;
+        }
+    }
+
     &__inner {
         @include m-inner();
     }
@@ -205,5 +243,20 @@ body {
                 margin-top: 0;
             }
         }
+    }
+
+    &__deco {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 150px;
+    }
+
+    &__deco:last-of-type {
+        position: absolute;
+        left: auto;
+        right: 0;
+        bottom: 0;
+        transform: scaleX(-1);
     }
 }
