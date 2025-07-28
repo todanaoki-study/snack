@@ -95,7 +95,9 @@
 /*----------street.html----------*/
 /*footer*/
 .footer {
+  margin-top: 20.8333333333em;
   padding: 3.3333333333em 0;
+  position: relative;
   color: #483505;
   background-color: #d8bb86;
   font-family: "Zen Maru Gothic", sans-serif;
@@ -110,6 +112,31 @@
     font-size: 0.875rem;
     line-height: 1.6;
   }
+}
+.footer__loop {
+  padding-bottom: 5.8333333333em;
+  position: absolute;
+  display: flex;
+  overflow: hidden;
+  top: 0;
+  transform: translateY(-30%);
+}
+@media (640px <= width) {
+  .footer__loop {
+    transform: translateY(-50%);
+  }
+}
+.footer__loop img {
+  padding-right: 3.3333333333em;
+  white-space: nowrap;
+}
+.footer__loop .image1 {
+  -webkit-animation: loop 50s -25s linear infinite;
+          animation: loop 50s -25s linear infinite;
+}
+.footer__loop .image2 {
+  -webkit-animation: loop2 50s linear infinite;
+          animation: loop2 50s linear infinite;
 }
 .footer__inner {
   width: 90%;
@@ -143,5 +170,39 @@
   margin-top: 8.3333333333em;
   display: block;
   text-align: center;
+}
+
+@-webkit-keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
 }
 /*# sourceMappingURL=footer.css.map */
