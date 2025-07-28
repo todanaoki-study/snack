@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="./CSS/common/common.min.css">
     <link rel="stylesheet" href="./CSS/index/index.min.css">
 
+
 </head>
 
 <body id="index">
 
     <header class="header">
         <div class="header__inner">
-            <img class="header__logo" src="https://placehold.jp/50x50.png" alt="">
+            <img class="header__logo" src="img/logo/logo.png" alt="">
 
             <button class="header__hamburger hamburger">
                 <!-- メニューの三本線 -->
@@ -29,16 +30,14 @@
     <main class="main" id="main">
         <section class="firstView">
 
-            <!-- <div class="firstView__decoration decoration">
-                <img src="https://placehold.jp/100x100.png" alt="">
-                <img src="https://placehold.jp/100x100.png" alt="">
-                <img src="https://placehold.jp/100x100.png" alt="">
-            </div> -->
+            <div class="firstView__decoration decoration">
+                <img class="decoration__img" src="./img/illust/donatu.png" alt="">
+                <img class="decoration__img" src="./img/illust/sail.png" alt="">
+            </div>
 
             <div class="firstView__inner">
                 <img class="firstView__img" src="https://placehold.jp/1041x543.png" alt="">
             </div>
-            <span class="firstView__event">イベントです</span>
         </section>
 
         <section class="shop">
@@ -53,50 +52,53 @@
 
         <section class="explanation">
             <div class="explanation__inner">
-                <div class="explanation__question">
-                    <img class="explanation__icon" src="https://placehold.jp/50x50.png" alt="">
+                <div class="explanation__content">
                     <p class="explanation__comment">スナックかくれんぼってどんなところのなの？</p>
+                    <img class="explanation__img" src="img/illust/explanation_yellow.png" alt="">
                 </div>
-                <div class="explanation__answer">
-                    <img class="explanation__icon" src="https://placehold.jp/50x50.png" alt="">
+                <div class="explanation__content">
                     <p class="explanation__comment">かくれんぼをしながら、移動する駄菓子屋だよ!!
                         毎週木曜日の夕方に内田橋商店街のどこかに現れるから、探してみてね〜。</p>
+                    <img class="explanation__img" src="img/illust/explanation_green.png" alt="">
                 </div>
             </div>
         </section>
 
         <section class="note">
             <div class="note__inner">
-                <div class="note__list">
-                    <h2 class="note__title">かくれんぼ日記</h2>
-                    <dl class="list__item">
-                        <dt class="list__day">
+                <h2 class="note__title">かくれんぼ日記</h2>
+                <div class="note__container">
+                    <dl class="note__list noteList">
+                        <dt class="noteList__item">
                             20/20/20
                         </dt>
-                        <dd class="list__title">
+                        <dd class="noteList__item">
                             タイトルタイトルさん
                         </dd>
                     </dl>
 
-                    <dl class="list__item">
-                        <dt class="list__day">
+                    <dl class="note__list noteList">
+                        <dt class="noteList__item">
                             20/20/20
                         </dt>
-                        <dd class="list__title">
+                        <dd class="noteList__item">
                             タイトルタイトルさん
                         </dd>
                     </dl>
 
-                    <dl class="list__item">
-                        <dt class="list__day">
+                    <dl class="note__list noteList">
+                        <dt class="noteList__item">
                             20/20/20
                         </dt>
-                        <dd class="list__title">
+                        <dd class="noteList__item">
                             タイトルタイトルさん
                         </dd>
                     </dl>
 
-                    <a href="#" class="note__btn">もっと覗いてみる</a>
+                    <div class="note__more">
+                        <a href="#" class="note__text">もっと覗いてみる</a>
+                        <img class="note__arrow" src="./img/illust/arrow.png" alt="">
+                    </div>
                 </div>
             </div>
         </section>
@@ -110,22 +112,51 @@
 
                 <hgroup class="instagram__titleContent">
                     <h2 class="instagram__title">お店をのぞいてみよう！！</h2>
-                    <img class="instagram__titleDeco" src="https://placehold.jp/50x50.png" alt="">
+                    <img class="instagram__titleDeco" src="./img/illust/inst_glass.png" alt="">
                 </hgroup>
 
-                <div class="instagram__grid grid">
-                    <img class="grid__item" src="https://placehold.jp/420x580.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/350x280.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/350x280.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/197x980.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/791x380.png" alt="">
-
-                    <img class="grid__item" src="https://placehold.jp/313x500.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/313x500.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/313x500.png" alt="">
-                    <img class="grid__item" src="https://placehold.jp/979x244.png" alt="">
+                <div class="instagram__container">
+                    <div class="instagram__grid grid">
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_gummy.svg" alt="" />
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_gumBlue.svg" alt="" />
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_gumRed.svg" alt="" />
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_takoyaki.svg" alt="" />
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_jelly.svg" alt="" />
+                            <span class="grid__bg"></span>
+                        </div>
+                    </div>
+                    <div class="instagram__grid grid">
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_cigarette.svg" alt="">
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_choco.svg" alt="">
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_ramune.svg" alt="">
+                            <span class="grid__bg"></span>
+                        </div>
+                        <div class="grid__item">
+                            <img class="grid__img" src="./img/illust/inst_melon.svg" alt="">
+                            <span class="grid__bg"></span>
+                        </div>
+                    </div>
                 </div>
-
 
                 <button><a class="instagram__btn btn" href=""></a></button>
             </div>
@@ -138,7 +169,14 @@
             <!--  -->
             <div class="map__inner">
                 <div class="map__content">
-                    <img class="map__frame" src="https://placehold.jp/150x150.png" alt="">
+
+                    <div class="map__frame">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1105.1822712965643!2d136.90637716856182!3d35.11565587951909!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037bac7d252995%3A0x24b9daf6c5a01907!2z5YaF55Sw5qmL5ZWG5bqX6KGX77yI6YCa56ewOuODgOODkOOCt--8iQ!5e0!3m2!1sja!2sjp!4v1753242329272!5m2!1sja!2sjp"
+                            style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
                     <div class="map__info">
                         <dl class="map__list">
                             <dt class="map__item">お店のなまえ</dt>
@@ -164,8 +202,59 @@
             </div>
         </section>
 
+        <footer class="footer">
+            <div class="footer__inner">
+                <div class="footer__nav">
+
+                    <nav class="nav">
+                        <ul class="nav__list">
+                            <li class="nav__logo">
+                                <a href="index.html">
+                                    <img src="https://placehold.jp/150x150.png" alt="">
+                                </a>
+                            </li>
+                            <li class="nav__item"><a href="street.html">かくれんぼ日記</a></li>
+                            <li class="nav__item"><a href="street.html">Instagram</a></li>
+                        </ul>
+                    </nav>
+
+                    <div class="footer__menu">
+                        <a href="index.html">ホーム</a>
+                        <div class="footer__gnav">
+                            <nav class="gnav">
+                                <ul class="gnav__list">
+                                    <li class="gnav__item"><a href="about.html">スナックかくれんぼについて</a></li>
+                                    <li class="gnav__item"><a href="about.html">▶︎ れいちゃんの想い</a></li>
+                                    <li class="gnav__item"><a href="about.html">▶︎ スタッフ紹介</a></li>
+                                    <li class="gnav__item"><a href="about.html">▶︎ お客さんの声</a></li>
+                                    <li class="gnav__item"><a href="about.html">▶︎ お菓子の紹介</a></li>
+                                    <li class="gnav__item"><a href="about.html">▶︎ 店舗情報</a></li>
+                                </ul>
+                            </nav>
+
+                            <nav class="gnav">
+                                <ul class="gnav__list">
+                                    <li class="gnav__item"><a href="street.html">スナックかくれんぼについて</a></li>
+                                    <li class="gnav__item"><a href="street.html">▶︎ れいちゃんの想い</a></li>
+                                    <li class="gnav__item"><a href="street.html">▶︎ スタッフ紹介</a></li>
+                                    <li class="gnav__item"><a href="street.html">▶︎ お客さんの声</a></li>
+                                    <li class="gnav__item"><a href="street.html">▶︎ お菓子の紹介</a></li>
+                                    <li class="gnav__item"><a href="street.html">▶︎ 店舗情報</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <small class="footer__copy">&copy; snac.kkakurenbo</small>
+            </div>
+        </footer>
+
         <script src="JS/all.js" defer></script>
         <script src="JS/index.js" defer></script>
+
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+        <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script defer src="https: //cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
     </main>
 
 </body>
