@@ -120,6 +120,8 @@ img {
         z-index: 1;
         display: block;
         width: 100%;
+        aspect-ratio: 870/630;
+        object-fit: cover;
 
         @include mix-query(tablet) {
             display: block;
@@ -147,7 +149,6 @@ img {
             transform: rotate(0);
         }
 
-        //後ほど別imgに変換dnで切り替え。
         @include mix-query(desktop) {
             width: 30%;
             top: 30%;
@@ -195,10 +196,10 @@ img {
             display: block;
             position: absolute;
             font-size: f-rem(20);
-            ;
             width: 100%;
             top: 35%;
-            left: 13%;
+            // left: 13%;
+            text-align: center;
 
             @include mix-query(tablet) {
                 transform: rotate(180deg) scale(-1, 1);

@@ -17,7 +17,7 @@
 <body>
     <header class="header">
         <div class="header__inner">
-            <img class="header__logo" src="https://placehold.jp/50x50.png" alt="" />
+            <img class="header__logo" src="img/logo/logo.png" alt="">
 
             <button class="header__hamburger hamburger">
                 <!-- メニューの三本線 -->
@@ -28,41 +28,56 @@
         </div>
     </header>
 
-    <!-- ナビゲーション -->
-    <div class="header__menu">
-        <div class="inner">
+    <div class="slider">
+        <div class="slider__inner">
+            <nav class="slider__content">
+                <p class="slider__home">
+                    <a class="slider__text" href="./index.html">ホーム</a>
+                </p>
+            </nav>
 
-            <nav class="menu">
-                <ul class="menu__item">
-                    <li class="menu__list"><a href="index.html">ホーム</a></li>
+            <nav class="slider__content">
+                <ul class="slider__list">
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">スナックかくれんぼについて</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">れいちゃんの想い</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">スタッフ紹介</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">お客さんの声</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">お菓子の紹介</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">店舗情報</a>
+                    </li>
                 </ul>
             </nav>
 
-            <nav class="menu">
-                <ul class="menu__item">
-                    <li class="menu__list"><a href="about.html">スナックかくれんぼについて</a></li>
-                    <li class="menu__list"><a href="about.html">れいちゃんの想い</a></li>
-                    <li class="menu__list"><a href="about.html">スタッフ紹介</a></li>
-                    <li class="menu__list"><a href="about.html">お客さんの声</a></li>
-                    <li class="menu__list"><a href="about.html">お菓子の紹介</a></li>
-                    <li class="menu__list"><a href="about.html">店舗情報</a></li>
+            <nav class="slider__content">
+                <ul class="slider__list">
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">内田橋商店街について</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">昭和の良き風景がある商店街</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">まきわら祭り</a>
+                    </li>
                 </ul>
             </nav>
 
-            <nav class="menu">
-                <ul class="menu__item">
-                    <li class="menu__list"><a href="about.html">内田橋商店街について</a></li>
-                    <li class="menu__list"><a href="about.html">昭和の良き風景がある商店街</a></li>
-                    <li class="menu__list"><a href="about.html">まきわら祭り</a></li>
-                </ul>
+            <nav class="slider__content">
+                <p class="slider__home">
+                    <a class="slider__text" href="https://note.com/">かくれんぼ日記</a>
+                </p>
             </nav>
-
-            <nav class="menu">
-                <ul class="menu__item">
-                    <li class="menu__list"><a href="about.html">かくれんぼ日記</a></li>
-                </ul>
-            </nav>
-
         </div>
     </div>
 
@@ -125,7 +140,7 @@
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__logo">
-                            <a href="index.html"><img src="./img/logo/logo.svg" alt="スナックかくれんぼ" /></a>
+                            <a href="index.html"><img src="./img/logo/logo.ong" alt="スナックかくれんぼ" /></a>
                         </li>
                         <li class="nav__item">
                             <a href="street.html">かくれんぼ日記</a>
@@ -193,6 +208,9 @@
     </footer>
 
     <script src="./JS/all.js" defer></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </body>
 
 </html>

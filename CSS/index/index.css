@@ -92,6 +92,9 @@ img {
   z-index: 1;
   display: block;
   width: 100%;
+  aspect-ratio: 870/630;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 @media screen and (min-width: 429px) {
   .decoImgs__img {
@@ -170,7 +173,7 @@ img {
   font-size: 1.25rem;
   width: 100%;
   top: 35%;
-  left: 13%;
+  text-align: center;
 }
 @media screen and (min-width: 429px) {
   .decoImgs__speech::after {

@@ -32,15 +32,68 @@
         </div>
     </header>
 
+    <div class="slider">
+        <div class="slider__inner">
+            <nav class="slider__content">
+                <p class="slider__home">
+                    <a class="slider__text" href="./index.html">ホーム</a>
+                </p>
+            </nav>
+
+            <nav class="slider__content">
+                <ul class="slider__list">
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">スナックかくれんぼについて</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">れいちゃんの想い</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">スタッフ紹介</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">お客さんの声</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">お菓子の紹介</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">店舗情報</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="slider__content">
+                <ul class="slider__list">
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">内田橋商店街について</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">昭和の良き風景がある商店街</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html">まきわら祭り</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <nav class="slider__content">
+                <p class="slider__home">
+                    <a class="slider__text" href="https://note.com/">かくれんぼ日記</a>
+                </p>
+            </nav>
+        </div>
+    </div>
+
     <main class="main" id="main">
         <section class="firstView">
             <span class="firstView__shutter">
             </span>
             <div class="firstView__inner">
-                <img class="firstView__logo" src="./img/logo/logo.svg" alt="">
+                <img class="firstView__logo" src="./img/logo/logo.png" alt="">
 
                 <div class="firstView__container decoImgs">
-                    <img class="decoImgs__img" src="https://placehold.jp/870x630.png" alt="">
+                    <img class="decoImgs__img" src="./img/phpto/info_dummy1.jpg" alt="">
                     <!-- pc未満ドーナツ -->
                     <img class="decoImgs__donut" src="./img//illust/donatu.png" alt="">
                     <!-- pc以上ドーナツ -->
@@ -244,6 +297,10 @@
         </section>
 
         <footer class="footer">
+            <div class="footer__loop">
+                <img class="image1" src="./img/illust/footer_deco9.svg" alt="ビールケースの画像">
+                <img class="image2" src="./img/illust/footer_deco9.svg" alt="ビールケースの画像">
+            </div>
             <div class="footer__inner">
                 <div class="footer__nav">
 
@@ -251,7 +308,7 @@
                         <ul class="nav__list">
                             <li class="nav__logo">
                                 <a href="index.html">
-                                    <img src="https://placehold.jp/150x150.png" alt="">
+                                    <img src="./img/logo/logo.png" alt="">
                                 </a>
                             </li>
                             <li class="nav__item"><a href="street.html">かくれんぼ日記</a></li>
@@ -292,7 +349,9 @@
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
         <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-        <!-- <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/CustomEase.min.js"></script> -->
+        <!-- クラッカー用 -->
+        <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.2/dist/confetti.browser.min.js"></script>
 
         <script src="JS/all.js" defer></script>
         <script src="JS/index.js" defer></script>

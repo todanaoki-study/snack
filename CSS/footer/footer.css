@@ -113,6 +113,12 @@
     line-height: 1.6;
   }
 }
+@media (1200px <= width) {
+  .footer {
+    padding: 10.7142857143em 0 4.2857142857em;
+    font-size: 1.125rem;
+  }
+}
 .footer__loop {
   padding-bottom: 5.8333333333em;
   position: absolute;

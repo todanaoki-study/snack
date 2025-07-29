@@ -149,6 +149,11 @@ $breakpoints: (
     line-height: (22.4/14);
   }
 
+  @include m-query(full) {
+    padding: (150em/14) 0 (60em/14);
+    font-size: f-rem(18);
+  }
+
   &__loop {
     padding-bottom: (70em/12);
     position: absolute;

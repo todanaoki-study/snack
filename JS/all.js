@@ -2,21 +2,46 @@
 const headerBtn = document.querySelector(".header__hamburger");
 const headerLine = document.querySelectorAll(".hamburger__line");
 
+//メニューの表示
+const menu = document.querySelector(".slider");
+
 //スライダー
 const slider = document.querySelector(".slider");
 let btnState = 0;//0は閉じている。1は開いている。
 headerBtn.addEventListener("click", () => {
-    console.log("通過");
 
-    btnState += 1;
-    buttonStyleChange();
+    buttonStyleChange(btnState);
 })
 
 //クリック時のボタン装飾の変化
 const buttonStyleChange = (state) => {
-    headerLine[0].classLiss.toggle("firstLineOpen")
-    headerLine[1].classList.toggle("secondLineOpen")
-    headerLine[2].classList.toggle("thirdLineOpen")
+    headerLine[0].classList.toggle("firstLineOpen");
+    headerLine[1].classList.toggle("secondLineOpen");
+    headerLine[2].classList.toggle("thirdLineOpen");
+    openMenu(state);
+}
+
+//メニューの出現
+const openMenu = (state) => {
+    console.log("通過");
+    if (state == 0) {
+        gsap.to(".slider", {
+            y: 0,
+            duration: 1,
+            autoAlpha: 1,
+            ease: "power1.out",
+        })
+        btnState = 1;
+    }
+    else if (state == 1) {
+        gsap.to(".slider", {
+            y: "-100%",
+            duration: 1,
+            autoAlpha: 0,
+            ease: "power1.out",
+        })
+        btnState = 0;
+    }
 }
 
 //************map処理
