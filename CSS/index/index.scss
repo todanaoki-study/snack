@@ -122,6 +122,7 @@ img {
         width: 100%;
         aspect-ratio: 870/630;
         object-fit: cover;
+        border-radius: 15px;
 
         @include mix-query(tablet) {
             display: block;
@@ -196,9 +197,9 @@ img {
             display: block;
             position: absolute;
             font-size: f-rem(20);
+            font-weight: bold;
             width: 100%;
             top: 35%;
-            // left: 13%;
             text-align: center;
 
             @include mix-query(tablet) {
@@ -208,11 +209,11 @@ img {
 
             @include mix-query(desktop) {
                 transform: none;
-                font-size: f-rem(35);
+                font-size: f-rem(48);
             }
 
             @include mix-query(full) {
-                font-size: f-rem(55);
+                font-size: f-rem(70);
             }
         }
     }
@@ -328,6 +329,7 @@ img {
         text-align: center;
         font-weight: bold;
         line-height: 1.5;
+        letter-spacing: .3rem;
 
         @include mix-query(tablet) {
             line-height: 1.7;
@@ -407,7 +409,7 @@ img {
             margin-bottom: 65px;
 
             & .explanation__comment {
-                margin-left: auto;
+                transform: translateX(20%);
             }
         }
 
@@ -415,6 +417,7 @@ img {
             margin-left: auto;
 
             & .explanation__comment {
+                transform: translateX(-20%);
                 margin-right: auto;
             }
 
@@ -445,9 +448,10 @@ img {
         width: 95%;
         transform: translate(-50%, -60%);
         font-size: 14px;
+        text-align: center;
 
         @include mix-query(tablet) {
-            font-size: 18px;
+            top: 45%;
         }
 
         @include mix-query(desktop) {
@@ -462,6 +466,10 @@ img {
     &__icon {
         display: block;
         width: 75px;
+
+        @include mix-query(desktop) {
+            width: 100px;
+        }
     }
 }
 
@@ -482,6 +490,8 @@ img {
         border: 1px solid #72550B;
         box-shadow: 6px 6px 0px 0px rgba(231, 147, 114, 1);
         padding: 30px 15px;
+
+        position: relative;
 
         @include mix-query(desktop) {
             padding: 45px 25px;
@@ -508,15 +518,7 @@ img {
         }
     }
 
-    &__list {
-        border-bottom: 1px dashed #72550B;
-        margin-bottom: 30px;
-        text-align: center;
 
-        @include mix-query(desktop) {
-            margin-bottom: 45px;
-        }
-    }
 
     &__more {
         @include mix-flex(center, flex-end);
@@ -548,12 +550,60 @@ img {
         margin-right: 5px;
         font-weight: bold;
     }
+
+    &__links {
+        display: block;
+
+        border-bottom: 1px dashed #72550B;
+        margin-bottom: 30px;
+        text-align: center;
+
+        @include mix-query(desktop) {
+            margin-bottom: 45px;
+        }
+
+    }
+
+    &__pencil {
+        display: block;
+        position: absolute;
+        width: 130px;
+        bottom: -18%;
+        left: -20%;
+
+        @include mix-query(tablet) {
+            bottom: -15%;
+            left: -10%;
+            width: 160px;
+        }
+
+        @include mix-query(desktop) {
+            width: 220px;
+            left: 10%;
+            bottom: -25%;
+        }
+
+        @include mix-query(full) {
+            width: 300px;
+            // left: %;
+            bottom: -40%;
+        }
+    }
 }
 
 .noteList {
     @include mix-query(desktop) {
         @include mix-flex(center, center);
         flex-wrap: nowrap;
+    }
+
+    overflow-x: hidden;
+
+    position: relative;
+    transition: .3s;
+
+    &:hover {
+        transform: scale(1.1);
     }
 
     &__item {
@@ -572,11 +622,26 @@ img {
             font-size: 18px;
         }
     }
+
+    &__bg {
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        background: #fff;
+    }
 }
 
 .instagram {
     margin-top: 120px;
     margin-bottom: 120px;
+
+    @include mix-query(desktop) {
+        margin-top: 160px;
+    }
 
     &__titleContent {
         @include mix-flex(center, center);
@@ -707,4 +772,8 @@ img {
 
 .lope {
     display: none;
+}
+
+.break {
+    display: inline-block;
 }

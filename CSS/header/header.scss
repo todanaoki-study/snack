@@ -162,6 +162,7 @@ $breakpoints: (
     &__text {
         display: block;
         transition: .3s;
+        width: fit-content;
 
         &:hover {
             transform: scale(1.05);

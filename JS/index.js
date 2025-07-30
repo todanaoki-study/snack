@@ -119,24 +119,141 @@ const unWatermark = (item) => {
     })
 }
 
-// //紙吹雪
-// var duration = 3 * 1000;
-// var animationEnd = Date.now() + duration;
-// var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+//スクロールアニメーション
+//おせんべい
+const riceCrack = document.querySelector(".shop__decoration");
+gsap.fromTo(".shop__decoration", {
+    y: "100%",
+},
+    {
+        y: "0",
+        scrollTrigger: {
+            trigger: ".shop",
+            start: "top bottom",
+            end: "top 75%",
+            scrub: 1,
+        }
+    });
 
-// function randomInRange(min, max) {
-//     return Math.random() * (max - min) + min;
-// }
+gsap.utils.toArray(".conductor__item").forEach((target) => {
+    gsap.fromTo(target, {
+        x: "100%",
+    }, {
+        x: 0,
+        rotateX: "360deg",
+        scrollTrigger: {
+            trigger: ".shop",
+            start: "top bottom",
+            end: "top center",
+            duration: 1,
+            scrub: 1,
+        }
+    })
+})
 
-// var interval = setInterval(function () {
-//     var timeLeft = animationEnd - Date.now();
+gsap.fromTo(".shop__title", {
+    autoAlpha: 0,
+},
+    {
+        autoAlpha: 1,
+        scrollTrigger: {
+            trigger: ".shop__title",
+            start: "top bottom",
+            end: "top 35%",
+            duration: 1,
+            scrub: 1,
+        }
+    })
 
-//     if (timeLeft <= 0) {
-//         return clearInterval(interval);
+gsap.fromTo(".shop__overview", {
+    autoAlpha: 0,
+},
+    {
+        autoAlpha: 1,
+        scrollTrigger: {
+            trigger: ".shop__overview",
+            start: "top bottom",
+            end: "top 35%",
+            duration: 1,
+            scrub: 1,
+        }
+    })
+
+gsap.fromTo(".js-firstIcon", {
+    autoAlpha: 0,
+    x: "-100%",
+}, {
+    autoAlpha: 1,
+    x: 0,
+    scrollTrigger: {
+        trigger: ".js-firstIcon",
+        start: "top bottom",
+        end: "top 65%",
+        duration: 1,
+        scrub: 1,
+    }
+})
+gsap.fromTo(".js-firstComment", {
+    scale: 0,
+}, {
+    scale: 1,
+    scrollTrigger: {
+        trigger: ".js-firstComment",
+        start: "top bottom",
+        end: "top center",
+        duration: 1,
+        scrub: 1,
+    }
+})
+
+gsap.fromTo(".js-secondIcon", {
+    autoAlpha: 0,
+    x: "100%",
+}, {
+    autoAlpha: 1,
+    x: 0,
+    scrollTrigger: {
+        trigger: ".js-secondIcon",
+        start: "top bottom",
+        end: "top 70%",
+        duration: 1,
+        scrub: 1,
+    }
+})
+gsap.fromTo(".js-secondComment", {
+    scale: 0,
+}, {
+    scale: 1,
+    scrollTrigger: {
+        trigger: ".js-secondComment",
+        start: "top bottom",
+        end: "top center",
+        duration: 1,
+        scrub: 1,
+    }
+})
+
+// gsap.to(".noteList__bg", {
+//     x: "100%",
+//     scrollTrigger: {
+//         trigger: ".note",
+//         start: "top bottom",
+//         end: "top top",
+//         // stagger: 1,
+//         // scrub: 1,
 //     }
+// })
 
-//     var particleCount = 50 * (timeLeft / duration);
-//     // since particles fall down, start a bit higher than random
-//     confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
-//     confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
-// }, 250);
+gsap.utils.toArray(".noteList__bg").forEach((target) => {
+    gsap.fromTo(target, {
+        x: 0,
+    }, {
+        x: "100%",
+        scrollTrigger: {
+            trigger: target,
+            start: "top bottom",
+            end: "top 10%",
+            scrub: 1,
+        }
+    })
+})
