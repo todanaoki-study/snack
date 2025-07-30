@@ -177,6 +177,23 @@
   display: block;
   text-align: center;
 }
+.footer__topBack {
+  display: block;
+  font-weight: bold;
+  font-size: 16px;
+  transition: 0.3s;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.footer__topBack:hover {
+  transform: scale(1.1);
+}
+@media (1200px <= width) {
+  .footer__topBack {
+    font-size: 20px;
+  }
+}
 
 @-webkit-keyframes loop {
   0% {

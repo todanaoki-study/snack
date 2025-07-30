@@ -95,6 +95,7 @@ img {
   aspect-ratio: 870/630;
   -o-object-fit: cover;
      object-fit: cover;
+  border-radius: 15px;
 }
 @media screen and (min-width: 429px) {
   .decoImgs__img {
@@ -171,6 +172,7 @@ img {
   display: block;
   position: absolute;
   font-size: 1.25rem;
+  font-weight: bold;
   width: 100%;
   top: 35%;
   text-align: center;
@@ -184,12 +186,12 @@ img {
 @media screen and (min-width: 800px) {
   .decoImgs__speech::after {
     transform: none;
-    font-size: 2.1875rem;
+    font-size: 3rem;
   }
 }
 @media screen and (min-width: 1200px) {
   .decoImgs__speech::after {
-    font-size: 3.4375rem;
+    font-size: 4.375rem;
   }
 }
 
@@ -313,6 +315,7 @@ img {
   text-align: center;
   font-weight: bold;
   line-height: 1.5;
+  letter-spacing: 0.3rem;
 }
 @media screen and (min-width: 429px) {
   .shop__title {
@@ -396,12 +399,13 @@ img {
   margin-bottom: 65px;
 }
 .explanation__content:nth-child(1) .explanation__comment {
-  margin-left: auto;
+  transform: translateX(20%);
 }
 .explanation__content:nth-child(2) {
   margin-left: auto;
 }
 .explanation__content:nth-child(2) .explanation__comment {
+  transform: translateX(-20%);
   margin-right: auto;
 }
 .explanation__content:nth-child(2) .explanation__img {
@@ -425,10 +429,11 @@ img {
   width: 95%;
   transform: translate(-50%, -60%);
   font-size: 14px;
+  text-align: center;
 }
 @media screen and (min-width: 429px) {
   .explanation__text {
-    font-size: 18px;
+    top: 45%;
   }
 }
 @media screen and (min-width: 800px) {
@@ -444,6 +449,11 @@ img {
 .explanation__icon {
   display: block;
   width: 75px;
+}
+@media screen and (min-width: 800px) {
+  .explanation__icon {
+    width: 100px;
+  }
 }
 
 .note {
@@ -467,6 +477,7 @@ img {
   border: 1px solid #72550B;
   box-shadow: 6px 6px 0px 0px rgb(231, 147, 114);
   padding: 30px 15px;
+  position: relative;
 }
 @media screen and (min-width: 800px) {
   .note__inner {
@@ -491,16 +502,6 @@ img {
 @media screen and (min-width: 800px) {
   .note__container {
     width: 50%;
-  }
-}
-.note__list {
-  border-bottom: 1px dashed #72550B;
-  margin-bottom: 30px;
-  text-align: center;
-}
-@media screen and (min-width: 800px) {
-  .note__list {
-    margin-bottom: 45px;
   }
 }
 .note__more {
@@ -531,7 +532,50 @@ img {
   margin-right: 5px;
   font-weight: bold;
 }
+.note__links {
+  display: block;
+  border-bottom: 1px dashed #72550B;
+  margin-bottom: 30px;
+  text-align: center;
+}
+@media screen and (min-width: 800px) {
+  .note__links {
+    margin-bottom: 45px;
+  }
+}
+.note__pencil {
+  display: block;
+  position: absolute;
+  width: 130px;
+  bottom: -18%;
+  left: -20%;
+}
+@media screen and (min-width: 429px) {
+  .note__pencil {
+    bottom: -15%;
+    left: -10%;
+    width: 160px;
+  }
+}
+@media screen and (min-width: 800px) {
+  .note__pencil {
+    width: 220px;
+    left: 10%;
+    bottom: -25%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .note__pencil {
+    width: 300px;
+    bottom: -40%;
+  }
+}
 
+.noteList {
+  overflow-x: hidden;
+  position: relative;
+  transition: 0.3s;
+}
 @media screen and (min-width: 800px) {
   .noteList {
     display: flex;
@@ -540,6 +584,9 @@ img {
     align-items: center;
     flex-wrap: nowrap;
   }
+}
+.noteList:hover {
+  transform: scale(1.1);
 }
 .noteList__item {
   font-size: 14px;
@@ -556,10 +603,24 @@ img {
     font-size: 18px;
   }
 }
+.noteList__bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #fff;
+}
 
 .instagram {
   margin-top: 120px;
   margin-bottom: 120px;
+}
+@media screen and (min-width: 800px) {
+  .instagram {
+    margin-top: 160px;
+  }
 }
 .instagram__titleContent {
   display: flex;
@@ -678,5 +739,9 @@ img {
 
 .lope {
   display: none;
+}
+
+.break {
+  display: inline-block;
 }
 /*# sourceMappingURL=index.css.map */

@@ -207,6 +207,23 @@ $breakpoints: (
     display: block;
     text-align: center;
   }
+
+  &__topBack {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    transition: .3s;
+    width: fit-content;
+
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    @include m-query(full) {
+      font-size: 20px;
+    }
+  }
 }
 
 @keyframes loop {
