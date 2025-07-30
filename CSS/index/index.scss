@@ -646,6 +646,10 @@ img {
     &__titleContent {
         @include mix-flex(center, center);
         margin-bottom: 45px;
+
+        @include mix-query(full) {
+            margin-bottom: 80px;
+        }
     }
 
     &__title {
@@ -655,6 +659,10 @@ img {
 
         @include mix-query(desktop) {
             font-size: 25px;
+        }
+
+        @include mix-query(full) {
+            font-size: 40px;
         }
     }
 

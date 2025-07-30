@@ -77,7 +77,6 @@ openingAnimation.to(".firstView__shutter", {
                     }
 
                     var particleCount = 50 * (timeLeft / duration);
-                    // since particles fall down, start a bit higher than random
                     confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.1, 0.3), y: Math.random() - 0.2 } });
                     confetti({ ...defaults, particleCount, origin: { x: randomInRange(0.7, 0.9), y: Math.random() - 0.2 } });
                 }, 250);
@@ -233,17 +232,6 @@ gsap.fromTo(".js-secondComment", {
     }
 })
 
-// gsap.to(".noteList__bg", {
-//     x: "100%",
-//     scrollTrigger: {
-//         trigger: ".note",
-//         start: "top bottom",
-//         end: "top top",
-//         // stagger: 1,
-//         // scrub: 1,
-//     }
-// })
-
 gsap.utils.toArray(".noteList__bg").forEach((target) => {
     gsap.fromTo(target, {
         x: 0,
@@ -257,3 +245,18 @@ gsap.utils.toArray(".noteList__bg").forEach((target) => {
         }
     })
 })
+
+gsap.fromTo(".note__title", {
+    autoAlpha: 0,
+    rotateX: 0,
+},
+    {
+        autoAlpha: 1,
+        rotateX: 360,
+        scrollTrigger: {
+            trigger: ".note",
+            start: "top bottom",
+            end: "top top",
+            scrub: 1,
+        }
+    })
