@@ -63,9 +63,10 @@ $breakpoints: (
 
     .info__feet {
         position: absolute;
-        width: 200px;
-        left: 0;
+        width: 300px;
+        left: -80px;
         bottom: 0;
+        transform: rotate(20deg);
     }
 }
 
@@ -89,11 +90,11 @@ $breakpoints: (
 
     .info__feet {
         position: absolute;
-        width: 200px;
+        width: 300px;
         left: auto;
-        right: 0;
+        right: -80px;
         bottom: 0;
-        transform: rotate(90deg);
+        transform: rotate(80deg);
     }
 }
 
