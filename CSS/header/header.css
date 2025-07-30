@@ -5,7 +5,6 @@
   width: 100%;
   height: auto;
   z-index: 1000;
-  transform: translateY(-200%);
 }
 .header__inner {
   width: 90%;

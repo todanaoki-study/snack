@@ -91,7 +91,9 @@ openingAnimation.to(".firstView__shutter", {
         scale: 1,
         ease: "elastic.out(1,0.5)",
     }, "<+.3")
-    .to(".header", {
+    .fromTo(".header", {
+        y: "-200%",
+    }, {
         y: 0,
     }, "<+")
 

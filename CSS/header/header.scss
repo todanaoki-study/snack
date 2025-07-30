@@ -37,12 +37,10 @@ $breakpoints: (
     height: auto;
 
     z-index: 1000;
-    transform: translateY(-200%
+
+    &__inner {
+        @include mix-inner(
     );
-
-
-&__inner {
-    @include mix-inner();
     @include mix-flex();
 }
 
