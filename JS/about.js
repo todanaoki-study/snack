@@ -1,53 +1,3 @@
-window.addEventListener("DOMContentLoaded", () => {
-  const items = document.querySelectorAll(".review__item");
-  const container = document.querySelector(".review__list");
-
-  if (window.innerWidth >= 768) {
-    const containerRect = container.getBoundingClientRect();
-    const containerWidth = container.clientWidth;
-    const containerHeight = container.clientHeight;
-
-    const placedItems = []; // 配置済みの要素の位置
-
-    items.forEach((item) => {
-      const itemWidth = item.offsetWidth;
-      const itemHeight = item.offsetHeight;
-
-      let placed = false;
-      let attempts = 0;
-      let left, top;
-
-      while (!placed && attempts < 100) {
-        left = Math.random() * (containerWidth - itemWidth);
-        top = Math.random() * (containerHeight - itemHeight);
-
-        const overlap = placedItems.some((pos) => {
-          return !(
-            (
-              left + itemWidth < pos.left || // 右が左より左
-              left > pos.left + itemWidth || // 左が右より右
-              top + itemHeight < pos.top || // 下が上より上
-              top > pos.top + itemHeight
-            ) // 上が下より下
-          );
-        });
-
-        if (!overlap) {
-          placed = true;
-          placedItems.push({ left, top });
-        }
-
-        attempts++;
-      }
-
-      // 見つかった位置を適用
-      item.style.position = "absolute";
-      item.style.left = `${left}px`;
-      item.style.top = `${top}px`;
-    });
-  }
-});
-
 const slide = document.getElementById("slide");
 const prev = document.getElementById("prev");
 const next = document.getElementById("next");
@@ -200,3 +150,98 @@ window.addEventListener("DOMContentLoaded", () => {
     doodle.style.transform = `rotate(${rotation}deg)`;
   });
 });
+
+let aboutResizeTimer;
+const items = document.querySelectorAll(".review__item");
+const container = document.querySelector(".review__list");
+
+// 付箋風カラー5色（パステル系）
+const stickyNoteColors = [
+  "#FFFBCC",
+  "#CCFFCC",
+  "#CCCCFF",
+  "#FFD9CC",
+  "#FFF0F5",
+];
+
+window.addEventListener("resize", () => {
+  clearTimeout(aboutResizeTimer);
+  aboutResizeTimer = setTimeout(aboutResizeComp, 1000);
+});
+
+function aboutResizeComp() {
+  if (window.innerWidth >= 429) {
+    console.log("フルサイズ");
+    container.style.position = "relative";
+    const containerWidth = container.clientWidth;
+    const containerHeight = container.clientHeight;
+
+    const placedItems = [];
+
+    items.forEach((item) => {
+      const itemWidth = item.offsetWidth;
+      const itemHeight = item.offsetHeight;
+
+      let placed = false;
+      let attempts = 0;
+      let left, top;
+
+      while (!placed && attempts < 100) {
+        left = Math.random() * (containerWidth - itemWidth);
+        top = Math.random() * (containerHeight - itemHeight);
+
+        const overlap = placedItems.some((pos) => {
+          return !(
+            left + itemWidth < pos.left ||
+            left > pos.left + itemWidth ||
+            top + itemHeight < pos.top ||
+            top > pos.top + itemHeight
+          );
+        });
+
+        if (!overlap) {
+          placed = true;
+          placedItems.push({ left, top });
+        }
+
+        attempts++;
+      }
+
+      // 背景色を付箋色からランダムに選ぶ
+      const randomColor =
+        stickyNoteColors[Math.floor(Math.random() * stickyNoteColors.length)];
+      item.style.position = "absolute";
+      item.style.left = `${left}px`;
+      item.style.top = `${top}px`;
+      item.style.backgroundColor = randomColor;
+    });
+  } else if (window.innerWidth < 429) {
+    console.log("スマホ");
+    container.style.position = "relative";
+
+    let currentTop = 0;
+    items.forEach((item) => {
+      const itemWidth = item.offsetWidth;
+      const itemHeight = item.offsetHeight;
+      const containerWidth = container.clientWidth;
+
+      const left = Math.random() * (containerWidth - itemWidth);
+
+      // 背景色を付箋色からランダムに選ぶ
+      const randomColor =
+        stickyNoteColors[Math.floor(Math.random() * stickyNoteColors.length)];
+      item.style.position = "absolute";
+      item.style.left = `${left}px`;
+      item.style.top = `${currentTop}px`;
+      item.style.backgroundColor = randomColor;
+
+      currentTop += itemHeight + 16; // 縦位置更新
+    });
+
+    // containerの高さを更新
+    container.style.height = `${currentTop}px`;
+  }
+}
+
+// 初期実行
+aboutResizeComp();
