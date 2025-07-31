@@ -3,8 +3,9 @@ let indexResizeTimer;
 
 window.addEventListener("resize", () => {
     clearTimeout(indexResizeTimer);
-    timer = setTimeout(indexResizeComp, 300);
+    indexResizeTimer = setTimeout(indexResizeComp, 300);
 })
+
 
 //todo　検証予定
 //それぞれドーナツの出現方式を記録。

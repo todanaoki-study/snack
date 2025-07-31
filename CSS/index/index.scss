@@ -679,6 +679,40 @@ img {
             flex-wrap: nowrap;
         }
     }
+
+    &__btn {
+        width: fit-content;
+        margin-left: auto;
+        transition: .3s;
+        font-weight: bold;
+        margin-top: 35px;
+        position: relative;
+        padding-bottom: 20px;
+
+        @include mix-query(tablet) {
+            font-size: 18px;
+        }
+
+        @include mix-query(desktop) {
+            font-size: 20px;
+            margin-top: 45px;
+        }
+
+        @include mix-query(full) {
+            font-size: 22px;
+        }
+
+        &::after {
+            content: "";
+            display: block;
+            width: 75%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            background: #EF9393;
+        }
+    }
 }
 
 .grid {
