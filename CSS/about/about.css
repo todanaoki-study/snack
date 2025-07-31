@@ -477,6 +477,8 @@ canvas {
 .content__title {
   font-weight: bold;
   font-size: 40px;
+  z-index: 999;
+  position: relative;
 }
 
 .content__item:nth-child(1) .content__title {
@@ -485,6 +487,7 @@ canvas {
 
 .content__item:nth-child(2) .content__title {
   color: #1c5990;
+  text-align: right;
 }
 
 .content__item:nth-child(3) .content__title {
