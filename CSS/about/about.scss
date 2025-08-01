@@ -17,6 +17,18 @@ body {
   margin-right: auto;
 }
 
+$breakpoints: (
+  "tablet": "screen and (min-width: 429px)",
+  "desktop": "screen and (min-width: 800px)",
+  "full": "screen and (min-width: 1200px)",
+  ) !default;
+
+@mixin mix-query($breakpoint) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
 body {
   overflow-x: hidden;
 }
@@ -99,14 +111,17 @@ body {
 @keyframes bubble {
   0% {
     bottom: -100px;
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(100px);
-  }
-  100% {
-    bottom: 1000px;
-  }
+    transform: translateX(0
+    );
+}
+
+50% {
+  transform: translateX(100px);
+}
+
+100% {
+  bottom: 1000px;
+}
 }
 
 /* mv */
@@ -225,6 +240,7 @@ body {
   position: relative;
   height: 200px;
 }
+
 canvas {
   position: absolute;
   bottom: 0;
@@ -418,7 +434,23 @@ canvas {
 
 .staff__member {
   background-color: #fff;
-  padding: 23px 21px;
+  padding: 50px 21px;
+  position: relative;
+  border-radius: 15px;
+  border: 5px solid #72550B;
+}
+
+.staff__tape {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.staff__img {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
 }
 
 .staff__text {
@@ -431,10 +463,13 @@ canvas {
 
 .staff__name {
   font-size: 28px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 .staff__detail {
   margin-top: 8px;
+  text-align: center;
 }
 
 .staff__subtitle {
@@ -485,13 +520,10 @@ canvas {
   max-width: 297.3px;
   width: (297.3 / 335) * 100%;
   background-color: #fff;
-  padding: 23px 19.82px;
+  border: 3px solid #72550B;
+  border-radius: 15px;
+  padding: 50px 19.82px;
   margin: 0 auto;
-
-  @include mix-query("full") {
-    // max-width: 297.3px;
-    // width: (297.3 / 1920) * 100%;
-  }
 }
 
 .staff__help .staff__name {
@@ -499,50 +531,24 @@ canvas {
   margin-top: 8px;
 }
 
-.staff__img {
-  position: relative;
-  display: inline-block;
-}
-
-.staff__img::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 60px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  z-index: 2;
-  pointer-events: none;
+.staff__icon {
+  display: block;
+  aspect-ratio: 1/1;
+  object-fit: contain;
 }
 
 .staff__help .staff__img {
-  width: 130px;
-  height: 54px;
+  width: 40%;
+  margin: 0 auto 15px;
+  position: relative;
 }
 
-.mast-1::before {
-  background-image: url("../../img/illust/about-mast1.svg");
-}
-.mast-2::before {
-  background-image: url("../../img/illust/about-mast2.svg");
-}
-
-.mast-3::before {
-  background-image: url("../../img/illust/about-mast3.svg");
-}
-.mast-4::before {
-  background-image: url("../../img/illust/about-mast4.svg");
-}
-.mast-5::before {
-  background-image: url("../../img/illust/about-mast5.svg");
+.staff__help .staff__tape {
+  top: -65%;
 }
 
 /* review */
 .review {
-  padding-top: 120px;
   background: url("../../img/illust/about-reviewBg.svg") no-repeat center center / cover;
 
   @include mix-query("tablet") {
@@ -671,6 +677,7 @@ canvas {
 .snack__item:nth-child(even) {
   margin-top: 210px;
 }
+
 .snack__item:nth-child(odd) {
   transform: translateY(0px);
 }

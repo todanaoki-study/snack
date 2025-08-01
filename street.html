@@ -10,14 +10,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Noto+Sans+JP:wght@100..900&family=Pacifico&family=RocknRoll+One&family=Sacramento&family=Zen+Kurenaido&family=Zen+Maru+Gothic&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Noto+Sans+JP:wght@100..900&family=Pacifico&family=RocknRoll+One&family=Sacramento&family=Zen+Kurenaido&family=Zen+Maru+Gothic&display=swap?family=Noto+Serif+JP:wght@200..900&family=Noto+Serif:ital,wght@0,100..900;1,100..900"
         rel="stylesheet" />
+
 </head>
 
 <body>
     <header class="header">
         <div class="header__inner">
-            <img class="header__logo" src="img/logo/logo.png" alt="">
+            <a class="header__logo" href="index.html"><img src="img/logo/logo.png" alt=""></a>
 
             <button class="header__hamburger hamburger">
                 <!-- メニューの三本線 -->
@@ -32,29 +33,26 @@
         <div class="slider__inner">
             <nav class="slider__content">
                 <p class="slider__home">
-                    <a class="slider__text" href="./index.html">ホーム</a>
+                    <a class="slider__text" href="./street.html">ページトップへ</a>
                 </p>
             </nav>
 
             <nav class="slider__content">
                 <ul class="slider__list">
                     <li class="slider__item">
-                        <a class="slider__text" href="about.html">スナックかくれんぼについて</a>
+                        <a class="slider__text" href="index.html#shop">概要</a>
                     </li>
                     <li class="slider__item">
-                        <a class="slider__text" href="about.html">れいちゃんの想い</a>
+                        <a class="slider__text" href="index.html#explanation">どんなお店</a>
                     </li>
                     <li class="slider__item">
-                        <a class="slider__text" href="about.html">スタッフ紹介</a>
+                        <a class="slider__text" href="index.html#note">かくれんぼ日記</a>
                     </li>
                     <li class="slider__item">
-                        <a class="slider__text" href="about.html">お客さんの声</a>
+                        <a class="slider__text" href="index.html#instagram">instagram</a>
                     </li>
                     <li class="slider__item">
-                        <a class="slider__text" href="about.html">お菓子の紹介</a>
-                    </li>
-                    <li class="slider__item">
-                        <a class="slider__text" href="about.html">店舗情報</a>
+                        <a class="slider__text" href="index.html#map">店舗情報</a>
                     </li>
                 </ul>
             </nav>
@@ -62,13 +60,19 @@
             <nav class="slider__content">
                 <ul class="slider__list">
                     <li class="slider__item">
-                        <a class="slider__text" href="street.html">内田橋商店街について</a>
+                        <a class="slider__text" href="about.html#content">れいちゃんの想い</a>
                     </li>
                     <li class="slider__item">
-                        <a class="slider__text" href="street.html">昭和の良き風景がある商店街</a>
+                        <a class="slider__text" href="about.html#staff">スタッフ紹介</a>
                     </li>
                     <li class="slider__item">
-                        <a class="slider__text" href="street.html">まきわら祭り</a>
+                        <a class="slider__text" href="about.html#review">お客さんの声</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html#snack">お菓子の紹介</a>
+                    </li>
+                    <li class="slider__item">
+                        <a class="slider__text" href="about.html#map">店舗情報</a>
                     </li>
                 </ul>
             </nav>
@@ -82,32 +86,32 @@
     </div>
 
     <main class="street">
-        <section id="visual" class="street__visual visual"></section>
+        <section id="visual" class="street__visual visual">
+            <video class="visual__video" src="./movie/street.mp4" autoplay loop muted></video>
+            <h1 class="visual__title">-内田橋商店街-</h1>
+        </section>
 
         <section id="info" class="street__info info">
             <div class="info__inner">
                 <h2 class="info__title">昭和の良き風景がある商店街</h2>
-                <div class="info__post">
-                    <div class="post">
-                        <div class="post__image">
-                            <img class="info__feet" src="./img/illust/info_feet.svg" alt="足跡">
-                            <img src="./img/phpto/info_dummy1.jpg" alt="商店街のダミー画像" />
-                        </div>
+                <div class="info__container">
+                    <article class="info__content post">
+                        <img class="post__img" src="./img/phpto/info_dummy1.jpg" alt="商店街のダミー画像" />
+
                         <p class="post__text">
                             内田橋商店街は今あるものを守りながら、年齢や性別や国籍を
                             こえて交流できる場所でありたい。そんな「人人をつなぐ架け橋」を目指す商店街です。
                         </p>
-                    </div>
-                    <div class="post">
-                        <div class="post__image">
-                            <img class="info__feet" src="./img/illust/info_feet.svg" alt="足跡">
-                            <img src="./img/phpto/info_dummy2.jpg" alt="商店街のダミー画像" />
-                        </div>
+                        <img class="post__feet feet" src="./img/illust/info_feet.svg" alt="足跡">
+                    </article>
+                    <article class="info__content post">
+                        <img class="post__img" src="./img/phpto/info_dummy2.jpg" alt="商店街のダミー画像" />
                         <p class="post__text">
                             内田橋商店街は今あるものを守りながら、年齢や性別や国籍を
                             こえて交流できる場所でありたい。そんな「人人をつなぐ架け橋」を目指す商店街です。
                         </p>
-                    </div>
+                        <img class="post__feet feet2" src="./img/illust/info_feet.svg" alt="足跡">
+                    </article>
                 </div>
             </div>
         </section>
@@ -119,12 +123,15 @@
                 <p class="intro__text">
                     年に2回。伝統を重んじる「まきわら祭」と革新に挑戦する「内田橋まつり」を開催しています。2つのお祭りは趣こそ異なりますが、内田橋エリアが再興し、かつての賑わいを取り戻そうとするメッセージは共通しています。
                 </p>
-                <div class="intro__image">
-                    <img src="./img/phpto/intro_dummy1.jpg" alt="お祭りのダミー画像" />
-                    <img src="./img/phpto/intro_dummy2.jpg" alt="お祭りのダミー画像" />
+
+                <div class="intro__container">
+                    <img class="intro__img" src="./img/phpto/intro_dummy1.jpg" alt="お祭りのダミー画像" />
+                    <img class="intro__img" src="./img/phpto/intro_dummy2.jpg" alt="お祭りのダミー画像" />
                 </div>
+
                 <img class="intro__deco" src="./img/illust/intro_deco2.svg" alt="稲">
                 <img class="intro__deco" src="./img/illust/intro_deco2.svg" alt="稲">
+
             </div>
         </section>
     </main>
@@ -140,14 +147,16 @@
                 <nav class="nav">
                     <ul class="nav__list">
                         <li class="nav__logo">
-                            <a href="index.html"><img src="./img/logo/logo.ong" alt="スナックかくれんぼ" /></a>
+                            <a href="index.html"><img src="./img/logo/logo.png" alt="スナックかくれんぼ" /></a>
                         </li>
                         <li class="nav__item">
                             <a href="street.html">かくれんぼ日記</a>
                         </li>
                         <li class="nav__item">
-                            <a href="street.html"><img src="./img/icon/Instagram.svg"
-                                    alt="Instagramのアイコン" />Instagram</a>
+                            <a href="street.html">
+                                <img src="./img/icon/Instagram.svg" alt="Instagramのアイコン" />
+                                Instagram
+                            </a>
                         </li>
                     </ul>
                 </nav>

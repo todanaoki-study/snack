@@ -1,14 +1,13 @@
 /*----------variable----------*/
-
 /*color*/
 $color-text: #483505;
 $color-bg: #F4EFE2;
 
 /*@mixin*/
 $breakpoints: (
-    "tablet": "(640px <= width)",
-    "desktop": "(800px <= width)",
-    "full": "(1200px <= width)",
+    "tablet": "screen and (min-width: 429px)",
+    "desktop": "screen and (min-width: 800px)",
+    "full": "screen and (min-width: 1200px)",
     ) !default;
 
 @mixin m-query($breakpoint) {
@@ -35,167 +34,203 @@ $breakpoints: (
     @return ($value/16)+rem;
 }
 
-
-/*----------module----------*/
-
-/*post*/
-.post {
-    margin-top: (50em/16
-    );
-
-@include m-query(desktop) {
-    @include m-flex(flex-end);
-    margin-top: (70em/16);
-}
-
-&__image {
-    position: relative;
-
-    @include m-query(desktop) {
-        width: (500/1180)*100%;
-    }
-
-    img {
-        width: 100%;
-        aspect-ratio: 1/1;
-        object-fit: cover;
-    }
-
-    .info__feet {
-        position: absolute;
-        width: 300px;
-        left: -80px;
-        bottom: 0;
-        transform: rotate(20deg);
-    }
-}
-
-&__text {
-    margin-top: (10em/16);
-
-    @include m-query(desktop) {
-        margin-top: 0;
-        width: (500/1180)*100%;
-    }
-}
-}
-
-.post:last-child {
-    margin-top: (70em/16);
-
-    @include m-query(desktop) {
-        flex-direction: row-reverse;
-        margin-top: (100em/16);
-    }
-
-    .info__feet {
-        position: absolute;
-        width: 300px;
-        left: auto;
-        right: -80px;
-        bottom: 0;
-        transform: rotate(80deg);
-    }
-}
-
-
 /*----------street.html----------*/
+
+
+.header {
+    font-family: "Zen Maru Gothic",
+        sans-serif;
+}
 
 /*body*/
 body {
     color: $color-text;
     background-color: $color-bg;
-    font-family: "Zen Maru Gothic",
-        sans-serif;
-    font-size: f-rem(16);
-    font-weight: 400;
-    line-height: (25.6/16);
-    letter-spacing: (50/1000)rem;
-    overflow-x: hidden;
-}
-
-/*street*/
-.street {
-    &__visual {
-        padding-top: (300em/16);
-
-        @include m-query(desktop) {
-            padding-top: (800em/16);
-        }
-    }
-
-    &__info {
-        margin-top: (150em/16);
-
-        @include m-query(desktop) {
-            margin-top: (200em/16);
-        }
-    }
-
-    &__intro {
-        margin-top: (150em/16);
-
-        @include m-query(desktop) {
-            margin-top: (200em/16);
-        }
-    }
+    font-family: "Noto Serif",
+        serif;
+    font-size: f-rem(16
+    );
+font-weight: 400;
+line-height: (25.6/16);
+letter-spacing: (50/1000)rem;
+overflow-x: hidden;
 }
 
 /*visual*/
 .visual {
-    background: url(https://placehold.jp/150x150.png) no-repeat center/cover;
+    display: block;
+    height: 100vh;
+    width: 100%;
+    position: relative;
 
-    &__inner {
-        @include m-inner();
+    &__video {
+        display: block;
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+    }
+
+    &__title {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 60px;
+        color: #ffffff;
+        font-weight: bold;
+        letter-spacing: 1.1rem;
     }
 }
 
 /*info*/
 .info {
-    padding-bottom: (150em/16);
+    margin-top: 120px;
 
     &__inner {
         @include m-inner();
     }
 
-    h2 {
-        font-size: f-rem(20);
-        font-weight: 600;
-        line-height: (32/20);
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 45px;
+
+        @include m-query(tablet) {
+            font-size: 25px;
+            margin-bottom: 60px;
+        }
 
         @include m-query(desktop) {
-            font-size: f-rem(30);
-            line-height: (48/30);
+            font-size: 30px;
+            margin-bottom: 80px;
+        }
+
+        @include m-query(full) {
+            font-size: 35px;
+            margin-bottom: 90px;
         }
     }
 }
 
+//post
+.post {
+    position: relative;
+
+    @include m-query(tablet) {
+        @include m-flex();
+        flex-wrap: nowrap;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 120px;
+    }
+
+    &__text {
+        margin-top: 20px;
+
+        @include m-query(tablet) {
+            width: 45%;
+            font-size: 18px;
+        }
+
+        @include m-query(desktop) {
+            font-size: 20px;
+        }
+
+        @include m-query(full) {
+            font-size: 24px;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+
+        @include m-query(tablet) {
+            width: 45%;
+        }
+    }
+
+    &__feet {
+        position: absolute;
+        bottom: -40%;
+        display: block;
+        width: 50%;
+        height: auto;
+    }
+}
+
+//todo一時的に設定
+.feet {
+    transform: rotate(90deg);
+    right: 0;
+
+    @include m-query(tablet) {
+        bottom: -70%;
+        width: 30%;
+    }
+
+    @include m-query(desktop) {
+        bottom: -40%;
+    }
+}
+
+.feet2 {
+    transform: rotate(90deg);
+    left: 0;
+
+    @include m-query(tablet) {
+        bottom: -70%;
+        width: 30%;
+        right: 0;
+    }
+
+    @include m-query(desktop) {
+        left: auto;
+        right: 50%;
+    }
+
+    @include m-query(full) {
+        left: auto;
+        bottom: -50%;
+        right: 20%;
+    }
+}
+
+//todoここまで
+
 /*intro*/
 .intro {
-    padding: (150em/16);
-    position: relative;
+    margin-top: 160px;
+    padding: 85px 0 120px 0;
     color: #ffffff;
     background: rgba(92, 106, 148, 1) url(/img/illust/intro_deco1.svg) repeat-x top left;
     background-size: 60px;
+    position: relative;
 
-    @include m-query(desktop) {
-        background-size: 80px;
+    @include m-query(tablet) {
+        padding: 85px 0 150px 0;
+        margin-top: 180px;
+    }
+
+    @include m-query(tablet) {
+        margin-top: 200px;
     }
 
     &__top {
         padding: (30em/16);
         position: absolute;
         width: 40%;
-        right: -10px;
+        right: 0;
         top: 0;
         transform: translateY(-50%);
-        background-color: rgba(92, 106, 148, 1);
-        border-radius: 50% 50% 0 50%;
+        background: #5c6a94;
+        border-radius: 50%;
 
         @include m-query(desktop) {
-            padding: (50em/16);
-            width: 480px;
-            top: 0;
+            width: 25%;
         }
     }
 
@@ -203,46 +238,68 @@ body {
         @include m-inner();
     }
 
-    h2 {
-        font-size: f-rem(20);
-        font-weight: 600;
-        line-height: (32/20);
+
+    &__title {
+        font-size: 20px;
+        font-weight: bold;
+        margin-bottom: 45px;
+
+        @include m-query(tablet) {
+            font-size: 25px;
+            margin-bottom: 60px;
+        }
 
         @include m-query(desktop) {
-            font-size: f-rem(30);
-            line-height: (48/30);
+            font-size: 30px;
+            margin-bottom: 80px;
+        }
+
+        @include m-query(full) {
+            font-size: 35px;
+            margin-bottom: 90px;
         }
     }
 
     &__text {
-        margin-top: (50em/16);
+        margin-bottom: 45px;
+
+        @include m-query(tablet) {
+            font-size: 18px;
+        }
 
         @include m-query(desktop) {
-            margin-top: (70em/16);
+            font-size: 20px;
+        }
+
+        @include m-query(full) {
+            font-size: 24px;
         }
     }
 
-    &__image {
-        margin-top: (50em/16);
-        text-align: center;
-
-        @include m-query(desktop) {
-            margin-top: (70em/16);
+    &__container {
+        @include m-query(tablet) {
             @include m-flex();
+            flex-wrap: nowrap;
         }
+    }
 
-        img {
-            @include m-query(desktop) {
-                width: (500/1180)*100%;
+    &__img {
+        display: block;
+        width: 100%;
+        height: auto;
+
+        &:not(:last-child) {
+            margin-bottom: 45px;
+
+            @include m-query(tablet) {
+                margin-bottom: 0;
             }
         }
 
-        img:last-of-type {
-            margin-top: (30em/16);
-
-            @include m-query(desktop) {
-                margin-top: 0;
-            }
+        @include m-query(tablet) {
+            width: 45%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
         }
     }
 
@@ -251,6 +308,14 @@ body {
         bottom: 0;
         left: 0;
         width: 150px;
+
+        @include m-query(desktop) {
+            width: 200px;
+        }
+
+        @include m-query(full) {
+            width: 300px;
+        }
     }
 
     &__deco:last-of-type {
