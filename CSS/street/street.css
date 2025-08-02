@@ -37,10 +37,17 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 60px;
+  font-size: 30px;
+  writing-mode: vertical-lr;
   color: #ffffff;
   font-weight: bold;
   letter-spacing: 1.1rem;
+}
+@media screen and (min-width: 800px) {
+  .visual__title {
+    font-size: 60px;
+    writing-mode: horizontal-tb;
+  }
 }
 
 /*info*/

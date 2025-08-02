@@ -274,7 +274,7 @@ img {
     background-position: center top, center bottom;
     background-size: 429px, 429px;
     background-color: #FDEFDE;
-
+    overflow-x: hidden;
 
     @include mix-query(tablet) {
         background-size: 800px, 800px;
